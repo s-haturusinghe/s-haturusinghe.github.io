@@ -332,7 +332,6 @@ main {
 }
 
 .avatar-box img {
-  width: 120px; /* Increased size */
   border-radius: 10%; /* Rounded edges */
 }
 
@@ -1259,6 +1258,8 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .clients-item { min-width: calc(33.33% - 10px); }
+
+  .avatar-box img { width: 80px; }
 
 
 
