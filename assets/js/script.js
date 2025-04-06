@@ -16,6 +16,51 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 
+// theme variables
+const themeBtn = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+const htmlElement = document.documentElement;
+
+// Function to set the theme
+const setTheme = function(isDark) {
+  if (isDark) {
+    document.body.classList.remove("light-theme");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.add("light-theme");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    localStorage.setItem("theme", "light");
+  }
+}
+
+// Check for saved theme preference or use device preference as default
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme === "light") {
+  setTheme(false);
+} else if (currentTheme === "dark") {
+  setTheme(true);
+} else {
+  // If no preference set, use the system preference
+  setTheme(prefersDarkScheme.matches);
+}
+
+// Theme toggle functionality
+themeBtn.addEventListener("click", function() {
+  // If currently not in light mode, switch to light theme
+  if (!document.body.classList.contains("light-theme")) {
+    setTheme(false);
+  } else {
+    setTheme(true);
+  }
+});
+
+
+
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
