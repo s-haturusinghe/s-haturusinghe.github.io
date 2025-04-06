@@ -68,6 +68,36 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
+  /* Light theme colors */
+  --light-bg-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(0, 0%, 95%) 3%, 
+    hsl(0, 0%, 90%) 97%
+  );
+  --light-bg-gradient-jet: linear-gradient(
+    to bottom right, 
+    hsla(0, 0%, 96%, 0.251) 0%, 
+    hsla(0, 0%, 96%, 0) 100%
+  ), hsl(0, 0%, 96%);
+  --light-bg-gradient-yellow-2: linear-gradient(
+    135deg, 
+    hsla(45, 100%, 71%, 0.251) 0%, 
+    hsla(35, 100%, 68%, 0) 59.86%
+  ), hsl(0, 0%, 96%);
+  --light-border-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(0, 0%, 80%) 0%, 
+    hsla(0, 0%, 80%, 0) 50%
+  );
+  
+  --light-jet: hsl(0, 0%, 80%);
+  --light-onyx: hsl(0, 0%, 90%);
+  --light-eerie-black-1: hsl(0, 0%, 96%);
+  --light-eerie-black-2: hsl(0, 0%, 95%);
+  --light-smoky-black: hsl(0, 0%, 100%);
+  --light-text-color: hsl(0, 0%, 25%);
+  --dark-orange-yellow-crayola: hsl(45, 80%, 50%);
+
   /**
    * typography
    */
@@ -100,6 +130,13 @@
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  
+  /* Light theme shadows */
+  --light-shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
+  --light-shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1);
+  --light-shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1);
+  --light-shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.08);
+  --light-shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
 
   /**
    * transition
@@ -161,7 +198,206 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body { 
+  background: var(--smoky-black);
+  transition: var(--transition-2);
+}
+
+/* Light Theme Styles */
+body.light-theme {
+  background: var(--light-smoky-black);
+}
+
+body.light-theme .sidebar,
+body.light-theme article {
+  background: var(--light-eerie-black-2);
+  border: 1px solid var(--light-jet);
+  box-shadow: var(--light-shadow-1);
+}
+
+body.light-theme .separator {
+  background: var(--light-jet);
+}
+
+body.light-theme .icon-box {
+  background: var(--light-border-gradient-onyx);
+}
+
+body.light-theme .icon-box::before {
+  background: var(--light-eerie-black-1);
+}
+
+body.light-theme .h2,
+body.light-theme .h3,
+body.light-theme .h4,
+body.light-theme .h5 {
+  color: var(--light-text-color);
+}
+
+body.light-theme .contact-info :is(.contact-link, time, address),
+body.light-theme .timeline-text,
+body.light-theme .about-text,
+body.light-theme .testimonials-text,
+body.light-theme .modal-content p,
+body.light-theme .skill .title-wrapper data,
+body.light-theme .service-item-text,
+body.light-theme .blog-text {
+  color: var(--light-text-color);
+}
+
+body.light-theme .info-content .name {
+  color: var(--light-text-color);
+}
+
+body.light-theme .info-content .title {
+  color: var(--eerie-black-2);
+  background: var(--light-onyx);
+}
+
+body.light-theme .social-item .social-link,
+body.light-theme .navbar-link,
+body.light-theme .contact-title,
+body.light-theme .project-category,
+body.light-theme .blog-meta :is(.blog-category, time),
+body.light-theme .timeline-list span,
+body.light-theme .filter-item button,
+body.light-theme .filter-select {
+  color: hsl(0, 0%, 40%);
+}
+
+body.light-theme .social-item .social-link:hover,
+body.light-theme .navbar-link:hover {
+  color: hsl(0, 0%, 30%);
+}
+
+body.light-theme .navbar {
+  background: hsla(0, 0%, 90%, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--light-jet);
+}
+
+body.light-theme .navbar-link.active,
+body.light-theme .filter-item button.active {
+  color: var(--dark-orange-yellow-crayola);
+}
+
+body.light-theme .timeline-item::after {
+  background: var(--text-gradient-yellow);
+  box-shadow: 0 0 0 4px var(--light-jet);
+}
+
+body.light-theme .timeline-item:not(:last-child)::before {
+  background: var(--light-jet);
+}
+
+body.light-theme a {
+  color: var(--dark-orange-yellow-crayola);
+}
+
+body.light-theme .project-title,
+body.light-theme .testimonials-item-title,
+body.light-theme .blog-item-title {
+  color: var(--light-text-color);
+}
+
+body.light-theme .content-card::before {
+  background: var(--light-bg-gradient-jet);
+}
+
+body.light-theme .testimonials-avatar-box,
+body.light-theme .modal-avatar-box {
+  background: var(--light-bg-gradient-onyx);
+}
+
+body.light-theme .testimonials-modal {
+  background: var(--light-eerie-black-2);
+  border: 1px solid var(--light-jet);
+}
+
+body.light-theme .modal-close-btn {
+  background: var(--light-onyx);
+  color: var(--light-text-color);
+}
+
+body.light-theme .form-input {
+  color: var(--light-text-color);
+  border: 1px solid var(--light-jet);
+}
+
+body.light-theme .form-input:focus {
+  border-color: var(--dark-orange-yellow-crayola);
+}
+
+body.light-theme .form-input:focus:invalid {
+  border-color: var(--bittersweet-shimmer);
+}
+
+body.light-theme .mapbox {
+  border: 1px solid var(--light-jet);
+}
+
+body.light-theme .mapbox iframe {
+  filter: grayscale(0.2) contrast(1.1);
+}
+
+body.light-theme .project-img::before,
+body.light-theme .blog-banner-box img,
+body.light-theme .blog-post-item > a::before {
+  transition: var(--transition-1);
+}
+
+body.light-theme .blog-post-item > a::before {
+  background: var(--light-eerie-black-1);
+}
+
+/* Theme toggle button styles */
+.theme-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50%;
+  background: var(--bg-gradient-onyx);
+  transition: var(--transition-1);
+  z-index: 10;
+  color: var(--orange-yellow-crayola);
+  font-size: 20px;
+}
+
+.theme-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-gradient-jet);
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+body.light-theme .theme-btn {
+  background: var(--light-border-gradient-onyx);
+  color: var(--dark-orange-yellow-crayola);
+}
+
+body.light-theme .theme-btn::before {
+  background: var(--light-bg-gradient-jet);
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: var(--light-onyx);
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  border: 5px solid var(--light-onyx);
+  background: hsla(0, 0%, 30%, 0.2);
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 0%, 30%, 0.3);
+}
 
 
 
