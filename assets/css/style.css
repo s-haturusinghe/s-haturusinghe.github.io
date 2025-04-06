@@ -123,7 +123,15 @@
   box-sizing: border-box;
 }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none;
+  color: var(--orange-yellow-crayola);
+  transition: var(--transition-1);
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
 
 li { list-style: none; }
 
@@ -504,7 +512,7 @@ main {
 .about-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-400);
   line-height: 1.6;
 }
 
