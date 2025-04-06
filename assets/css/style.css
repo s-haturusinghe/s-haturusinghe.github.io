@@ -511,6 +511,25 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+/* Add animation to emphasize the 'Update:' text */
+@keyframes highlight {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: var(--orange-yellow-crayola);
+    color: var(--white-2);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.about-text strong {
+  display: inline-block;
+  animation: highlight 2s ease-in-out;
+}
+
 
 
 /**
