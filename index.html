@@ -139,6 +139,10 @@
           </li>
 
           <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Publications</button>
+          </li>
+
+          <li class="navbar-item">
             <button class="theme-btn" id="theme-toggle">
               <i class="fas fa-moon" id="theme-icon"></i>
             </button>
@@ -181,7 +185,7 @@
           </p>
 
           <p>
-            <strong>Update:</strong> I'm excited to share that my first research paper, <a href="https://arxiv.org/abs/2504.02178" target="_blank" rel="noopener noreferrer"><em>"Subasa - Adapting Language Models for Low-Resourced Offensive Language Detection in Sinhala,"</em></a> based on my undergraduate thesis, has been accepted to appear at <strong>NAACL 2025 SRW</strong>! (the 2025 Annual Conference of the North American Chapter of the Association for Computational Linguistics: Student Research Workshop)
+            <strong>Update:</strong> I'm excited to share that my first research paper, <a href="https://arxiv.org/abs/2504.02178" target="_blank" rel="noopener noreferrer"><em>"Subasa - Adapting Language Models for Low-Resourced Offensive Language Detection in Sinhala,"</em></a> based on my undergraduate thesis, has been accepted to appear at <strong>NAACL 2025 SRW</strong>! (Annual Conference of the North American Chapter of the Association for Computational Linguistics: Student Research Workshop)
           </p>
 
           <p>
@@ -203,15 +207,55 @@
         </header>
 
         <section class="under-maintenance">
-          <h2>🚧 Under Maintenance 🚧</h2>
+          <h2>🚧 Under Maintenance!</h2>
           <p>Currently working on updating the project list with the latest work. Please check back soon!</p>
         </section>
 
       </article>
 
+      <!--
+        - #PUBLICATIONS
+      -->
 
+      <article class="publications" data-page="publications">
 
-      
+        <header>
+          <h2 class="h2 article-title">Publications</h2>
+        </header>
+
+        <section class="publications-list">
+          <ul>
+            <li>
+              <h3>Subasa - Adapting Language Models for Low-resourced Offensive Language Detection in Sinhala</h3>
+              
+              <div class="citation">
+                <strong>Shanilka Haturusinghe</strong>, Tharindu Cyril Weerasooriya, Marcos Zampieri, Christopher M. Homan, and S. R. Liyanage. "Subasa - Adapting Language Models for Low-resourced Offensive Language Detection in Sinhala." arXiv preprint arXiv:2504.02178 (2025).
+              </div>
+              
+              <div class="conference-info">
+                Accepted at NAACL 2025 SRW (Annual Conference of the North American Chapter of the Association for Computational Linguistics: Student Research Workshop).
+              </div>
+              
+              <div class="abstract">
+                <strong>Abstract:</strong> Accurate detection of offensive language is essential for a number of applications related to social media safety. There is a sharp contrast in performance in this task between low and high-resource languages. In this paper, we adapt fine-tuning strategies that have not been previously explored for Sinhala in the downstream task of offensive language detection. Using this approach, we introduce four models: "Subasa-XLM-R", which incorporates an intermediate Pre-Finetuning step using Masked Rationale Prediction. Two variants of "Subasa-Llama" and "Subasa-Mistral", are fine-tuned versions of Llama (3.2) and Mistral (v0.3), respectively, with a task-specific strategy. We evaluate our models on the SOLD benchmark dataset for Sinhala offensive language detection. All our models outperform existing baselines. Subasa-XLM-R achieves the highest Macro F1 score (0.84) surpassing state-of-the-art large language models like GPT-4o when evaluated on the same SOLD benchmark dataset under zero-shot settings. The models and code are publicly available.
+              </div>
+              
+              <div class="links">
+                <a href="https://arxiv.org/abs/2504.02178" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-file-pdf"></i> Read Paper
+                </a>
+                <a href="https://github.com/haturusinghe/subasa-plm" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> Code Repository #1
+                </a>
+                <a href="https://github.com/haturusinghe/subasa-llm" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> Code Repository #2
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </article>
 
     </div>
 
