@@ -677,7 +677,7 @@ main {
   font-size: var(--fs-5);
 }
 
-.contact-info address { font-style: normal; }
+contact-info address { font-style: normal; }
 
 .social-list {
   display: flex;
@@ -1289,6 +1289,54 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+}
+
+/* Add styles for the under-maintenance message */
+.under-maintenance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+  background: var(--bg-gradient-onyx);
+  border-radius: 12px;
+  box-shadow: var(--shadow-3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.under-maintenance h2 {
+  font-size: var(--fs-2);
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 20px;
+  animation: bounce 1.5s infinite;
+}
+
+.under-maintenance p {
+  font-size: var(--fs-6);
+  color: var(--light-gray);
+  line-height: 1.6;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 
