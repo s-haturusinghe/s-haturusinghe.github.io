@@ -209,6 +209,93 @@ document.addEventListener("DOMContentLoaded", function() {
   const secretTriggerContainer = document.querySelector(".secret-trigger-container");
   const secretSection = document.getElementById("secret-section");
   const aboutPage = document.querySelector(".about");
+  const particles = document.querySelectorAll(".particle");
+
+  // Particle animation functionality
+  function initParticles() {
+    // Initial positioning of particles
+    particles.forEach(particle => {
+      resetParticle(particle);
+      
+      // Start with random animations
+      animateParticle(particle);
+    });
+  }
+
+  function resetParticle(particle) {
+    // Random position within the container
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const size = Math.random() * 4 + 2; // Random size between 2-6px
+    const delay = Math.random() * 3;
+    
+    particle.style.left = `${x}%`;
+    particle.style.top = `${y}%`;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.opacity = Math.random() * 0.5 + 0.2; // Random opacity between 0.2-0.7
+    particle.style.animationDelay = `${delay}s`;
+  }
+
+  function animateParticle(particle) {
+    // Apply animations
+    particle.style.animation = `
+      particle-glow ${Math.random() * 3 + 2}s infinite alternate,
+      float-upward ${Math.random() * 5 + 10}s forwards
+    `;
+    
+    // When animation ends, reset and restart
+    particle.addEventListener('animationend', function() {
+      resetParticle(particle);
+      setTimeout(() => {
+        animateParticle(particle);
+      }, Math.random() * 100);
+    });
+  }
+
+  // Initialize particles
+  initParticles();
+
+  // Mouse move effect for particles
+  secretTriggerContainer.addEventListener('mousemove', function(e) {
+    const rect = secretTriggerContainer.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    
+    particles.forEach(particle => {
+      const particleRect = particle.getBoundingClientRect();
+      const particleCenterX = particleRect.left + particleRect.width/2 - rect.left;
+      const particleCenterY = particleRect.top + particleRect.height/2 - rect.top;
+      
+      // Calculate distance from mouse to particle
+      const dx = mouseX - particleCenterX;
+      const dy = mouseY - particleCenterY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      // If mouse is close to particle, make it move away
+      if (distance < 40) {
+        const angle = Math.atan2(dy, dx);
+        const moveX = -Math.cos(angle) * (40 - distance) / 2;
+        const moveY = -Math.sin(angle) * (40 - distance) / 2;
+        
+        // Add transform with slight easing
+        particle.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.2)`;
+        particle.style.filter = 'blur(2px)';
+        particle.style.opacity = '0.8';
+      } else {
+        particle.style.transform = '';
+        particle.style.filter = '';
+      }
+    });
+  });
+  
+  // Reset particles when mouse leaves
+  secretTriggerContainer.addEventListener('mouseleave', function() {
+    particles.forEach(particle => {
+      particle.style.transform = '';
+      particle.style.filter = '';
+    });
+  });
 
   // Show the secret trigger button rarely and randomly
   let secretTimeout;

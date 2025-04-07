@@ -778,11 +778,11 @@ social-item .social-link:hover { color: var(--light-gray); }
   display: flex;
   justify-content: center;
   margin: 0;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  opacity: 1; /* Make container always visible */
   padding: 1px 0;
   position: relative;
+  height: 60px; /* Give it specific height for particles */
+  overflow: hidden; /* Keep particles contained */
 }
 
 /* Add a hover area that will reveal the button */
@@ -792,18 +792,8 @@ social-item .social-link:hover { color: var(--light-gray); }
   top: -20px;
   left: 0;
   width: 100%;
-  height: calc(50% + 5px);
+  height: calc(100% + 5px);
   z-index: 1;
-}
-
-.secret-trigger-container:hover {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.secret-trigger-container.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .secret-trigger {
@@ -815,8 +805,75 @@ social-item .social-link:hover { color: var(--light-gray); }
   font-weight: var(--fw-500);
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.4s ease-in-out;
   z-index: 2;
+  opacity: 0; /* Hide only the button initially */
+  transform: translateY(20px);
+}
+
+.secret-trigger-container:hover .secret-trigger,
+.secret-trigger-container.show .secret-trigger {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Particles container and particle styling */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  background: var(--orange-yellow-crayola);
+  opacity: 0.6;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform-origin: center;
+  width: 4px;
+  height: 4px;
+  filter: blur(1px);
+  box-shadow: 0 0 10px var(--orange-yellow-crayola);
+}
+
+body.light-theme .particle {
+  background: var(--dark-orange-yellow-crayola);
+  box-shadow: 0 0 10px var(--dark-orange-yellow-crayola);
+}
+
+/* Make particles glow with animation */
+@keyframes particle-glow {
+  0% {
+    opacity: 0.2;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0.2;
+    filter: blur(1px);
+  }
+}
+
+@keyframes float-upward {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) translateX(5px) scale(1.2);
+  }
+  100% {
+    transform: translateY(-20px) translateX(0) scale(0.8);
+    opacity: 0;
+  }
 }
 
 /* Gradient Text Animation */
