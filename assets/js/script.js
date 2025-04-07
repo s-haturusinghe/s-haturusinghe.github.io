@@ -202,3 +202,99 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Secret Section functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const secretTrigger = document.getElementById("secret-trigger");
+  const secretTriggerContainer = document.querySelector(".secret-trigger-container");
+  const secretSection = document.getElementById("secret-section");
+  const aboutPage = document.querySelector(".about");
+
+  // Show the secret trigger button rarely and randomly
+  let secretTimeout;
+  let hasShownSecretToday = false;
+  let isHovered = false;
+  
+  // Check if we've already shown the secret today using localStorage
+  const lastShownDate = localStorage.getItem("secretLastShown");
+  const today = new Date().toDateString();
+  
+  if (lastShownDate === today) {
+    hasShownSecretToday = true;
+  }
+
+  // Add event listeners for hover state
+  secretTriggerContainer.addEventListener("mouseenter", function() {
+    isHovered = true;
+  });
+
+  secretTriggerContainer.addEventListener("mouseleave", function() {
+    isHovered = false;
+    
+    // Only hide if section is not showing and not being explicitly shown
+    if (!secretSection.classList.contains("show") && !hasShownSecretToday) {
+      setTimeout(() => {
+        if (!isHovered) {
+          secretTriggerContainer.classList.remove("show");
+        }
+      }, 1000);
+    }
+  });
+
+  function checkAndSetupSecretSection() {
+    // Clear any existing timeout
+    if (secretTimeout) {
+      clearTimeout(secretTimeout);
+    }
+
+    // Only show if about page is active and we haven't shown it today
+    // Also add randomness - only show 20% of the time even if eligible
+    if (aboutPage.classList.contains("active") && !hasShownSecretToday && Math.random() < 0.2) {
+      secretTimeout = setTimeout(() => {
+        secretTriggerContainer.classList.add("show");
+        
+        // Remember that we've shown it today
+        localStorage.setItem("secretLastShown", today);
+        hasShownSecretToday = true;
+        
+        // Auto-hide after 10 seconds if not clicked or hovered
+        setTimeout(() => {
+          if (!secretSection.classList.contains("show") && !isHovered) {
+            secretTriggerContainer.classList.remove("show");
+          }
+        }, 10000);
+      }, 3000);
+    } else if (!aboutPage.classList.contains("active")) {
+      // Hide the secret trigger if navigating away
+      secretTriggerContainer.classList.remove("show");
+      secretSection.classList.remove("show");
+    }
+  }
+
+  // Check when page loads
+  checkAndSetupSecretSection();
+
+  // Add click event for the secret trigger button
+  secretTrigger.addEventListener("click", function() {
+    secretSection.classList.toggle("show");
+    
+    // Change button text based on section state
+    const buttonText = secretSection.classList.contains("show") 
+      ? "Hide Hobbies and Interests"
+      : "Show Hobbies and Interests"; 
+    
+    secretTrigger.querySelector(".gradient-text").textContent = buttonText;
+    
+    // Scroll to section when showing
+    if (secretSection.classList.contains("show")) {
+      setTimeout(() => {
+        secretSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  });
+
+  // Set up listeners for page navigation
+  for (let i = 0; i < navigationLinks.length; i++) {
+    navigationLinks[i].addEventListener("click", checkAndSetupSecretSection);
+  }
+});
