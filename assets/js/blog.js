@@ -172,20 +172,35 @@ class BlogManager {
     const blogList = document.getElementById('blog-list');
     const noPosts = document.getElementById('no-posts');
 
-    loadingIndicator.style.display = 'none';
+    // Hide loading indicator
+    if (loadingIndicator) {
+      loadingIndicator.style.display = 'none';
+    }
 
     if (this.blogPosts.length === 0) {
-      noPosts.style.display = 'block';
+      if (noPosts) {
+        noPosts.style.display = 'block';
+      }
       return;
     }
 
-    blogList.style.display = 'block';
-    blogList.innerHTML = '';
+    if (blogList) {
+      // Force display and clear content
+      blogList.style.display = 'flex';
+      blogList.style.flexDirection = 'column';
+      blogList.style.gap = '24px';
+      blogList.innerHTML = '';
 
-    this.blogPosts.forEach((post, index) => {
-      const postElement = this.createPostListItem(post, index);
-      blogList.appendChild(postElement);
-    });
+      this.blogPosts.forEach((post, index) => {
+        const postElement = this.createPostListItem(post, index);
+        blogList.appendChild(postElement);
+      });
+
+      // Force a reflow to ensure styles are applied
+      blogList.offsetHeight;
+      
+      console.log(`Rendered ${this.blogPosts.length} blog posts`);
+    }
   }
 
   createPostListItem(post, index) {
