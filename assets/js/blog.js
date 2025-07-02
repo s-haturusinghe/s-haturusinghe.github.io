@@ -275,7 +275,14 @@ class BlogManager {
     `;
 
     blogList.style.display = 'none';
-    articleView.style.display = 'block';
+    articleView.style.display = 'flex';
+    articleView.style.flexDirection = 'column';
+    
+    // Debug logging
+    console.log('Blog list display:', blogList.style.display);
+    console.log('Article view display:', articleView.style.display);
+    console.log('Article view element:', articleView);
+    console.log('Article content:', articleContent.innerHTML.substring(0, 100) + '...');
     
     // Scroll to top
     window.scrollTo(0, 0);
@@ -291,6 +298,10 @@ class BlogManager {
     blogList.style.display = 'flex';
     articleView.style.display = 'none';
     this.currentArticle = null;
+    
+    // Debug logging
+    console.log('Showing blog list - Blog list display:', blogList.style.display);
+    console.log('Showing blog list - Article view display:', articleView.style.display);
   }
 
   showNoPosts() {
