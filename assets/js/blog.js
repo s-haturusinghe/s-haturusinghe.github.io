@@ -246,7 +246,7 @@ class BlogManager {
     const articleContent = document.getElementById('article-content');
 
     // Update browser URL without page reload
-    const newUrl = `${window.location.pathname}?post=${encodeURIComponent(post.filename.replace('.md', ''))}`;
+    const newUrl = `${window.location.pathname}?post=${encodeURIComponent(post.filename.replace(/\.(md|txt)$/, ''))}`;
     window.history.pushState({ postIndex }, post.title, newUrl);
 
     const formattedDate = post.date.toLocaleDateString('en-US', {
@@ -288,7 +288,7 @@ class BlogManager {
     // Update browser URL
     window.history.pushState({}, 'Blog', window.location.pathname);
 
-    blogList.style.display = 'block';
+    blogList.style.display = 'flex';
     articleView.style.display = 'none';
     this.currentArticle = null;
   }
