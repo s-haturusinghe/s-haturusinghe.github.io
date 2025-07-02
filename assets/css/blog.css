@@ -1,13 +1,13 @@
 /* blog.css - Styles for blog-related elements */
 
-/* Ensure blog elements are visible */
+/* Ensure blog elements are visible by default */
 #blog-list {
-  display: flex !important;
+  display: flex;
 }
 
 /* Blog List Styles */
 .blog-list {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   gap: 24px;
   margin-top: 24px;
@@ -107,6 +107,12 @@
   padding: 28px 24px 24px 24px;
   border: 1px solid var(--jet, #383838);
   margin-top: 24px;
+  /* Ensure visibility */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 
 #back-to-list {

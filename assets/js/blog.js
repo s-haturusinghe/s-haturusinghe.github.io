@@ -246,7 +246,7 @@ class BlogManager {
     const articleContent = document.getElementById('article-content');
 
     // Update browser URL without page reload
-    const newUrl = `${window.location.pathname}?post=${encodeURIComponent(post.filename.replace('.md', ''))}`;
+    const newUrl = `${window.location.pathname}?post=${encodeURIComponent(post.filename.replace(/\.(md|txt)$/, ''))}`;
     window.history.pushState({ postIndex }, post.title, newUrl);
 
     const formattedDate = post.date.toLocaleDateString('en-US', {
@@ -275,7 +275,14 @@ class BlogManager {
     `;
 
     blogList.style.display = 'none';
-    articleView.style.display = 'block';
+    articleView.style.display = 'flex';
+    articleView.style.flexDirection = 'column';
+    
+    // Debug logging
+    console.log('Blog list display:', blogList.style.display);
+    console.log('Article view display:', articleView.style.display);
+    console.log('Article view element:', articleView);
+    console.log('Article content:', articleContent.innerHTML.substring(0, 100) + '...');
     
     // Scroll to top
     window.scrollTo(0, 0);
@@ -288,9 +295,13 @@ class BlogManager {
     // Update browser URL
     window.history.pushState({}, 'Blog', window.location.pathname);
 
-    blogList.style.display = 'block';
+    blogList.style.display = 'flex';
     articleView.style.display = 'none';
     this.currentArticle = null;
+    
+    // Debug logging
+    console.log('Showing blog list - Blog list display:', blogList.style.display);
+    console.log('Showing blog list - Article view display:', articleView.style.display);
   }
 
   showNoPosts() {
