@@ -181,25 +181,17 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
-// page navigation variables
+// page navigation variables (legacy - now using regular links)
+// Keeping this section for compatibility but navigation is now handled by HTML links
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
+// Legacy navigation functionality - no longer needed for multi-page setup
+// Keeping for any remaining data-nav-link elements if they exist
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
+    // This is now handled by HTML links, but keeping for backwards compatibility
+    console.log("Navigation handled by HTML links");
   });
 }
 
@@ -210,6 +202,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const secretSection = document.getElementById("secret-section");
   const aboutPage = document.querySelector(".about");
   const particles = document.querySelectorAll(".particle");
+
+  // Only run secret section functionality if elements exist (i.e., on About page)
+  if (!secretTrigger || !secretTriggerContainer || !secretSection || !aboutPage) {
+    return;
+  }
 
   // Particle animation functionality
   function initParticles() {
@@ -336,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Only show if about page is active and we haven't shown it today
     // Also add randomness - only show 20% of the time even if eligible
+    // Since we're now on a dedicated About page, the aboutPage always has "active" class
     if (aboutPage.classList.contains("active") && !hasShownSecretToday && Math.random() < 0.2) {
       secretTimeout = setTimeout(() => {
         secretTriggerContainer.classList.add("show");
@@ -351,10 +349,6 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }, 10000);
       }, 3000);
-    } else if (!aboutPage.classList.contains("active")) {
-      // Hide the secret trigger if navigating away
-      secretTriggerContainer.classList.remove("show");
-      secretSection.classList.remove("show");
     }
   }
 
@@ -379,9 +373,4 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 300);
     }
   });
-
-  // Set up listeners for page navigation
-  for (let i = 0; i < navigationLinks.length; i++) {
-    navigationLinks[i].addEventListener("click", checkAndSetupSecretSection);
-  }
 });
