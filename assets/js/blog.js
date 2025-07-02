@@ -37,9 +37,11 @@ class BlogManager {
   async loadPostsFromIndex(postsIndex) {
     const posts = [];
     for (const postInfo of postsIndex.posts) {
+      // Change .md extension to .txt for fetching
+      const fileTxt = postInfo.file.replace(/\.md$/, '.txt');
       try {
-        const postContent = await this.loadMarkdownFile(postInfo.file);
-        const post = this.parseMarkdownPost(postContent, postInfo.file);
+        const postContent = await this.loadMarkdownFile(fileTxt);
+        const post = this.parseMarkdownPost(postContent, fileTxt);
         if (post) {
           // Override with metadata from index if available
           if (postInfo.title) post.title = postInfo.title;
@@ -50,7 +52,7 @@ class BlogManager {
           posts.push(post);
         }
       } catch (error) {
-        console.error(`Error loading post ${postInfo.file}:`, error);
+        console.error(`Error loading post ${fileTxt}:`, error);
       }
     }
     return posts.sort((a, b) => b.date - a.date);
@@ -60,10 +62,10 @@ class BlogManager {
     // Since we can't dynamically discover files in static hosting,
     // we'll try common filenames
     const commonPosts = [
-      'welcome.md',
-      'first-post.md',
-      'hello-world.md',
-      'introduction.md'
+      'welcome.txt',
+      'first-post.txt',
+      'hello-world.txt',
+      'introduction.txt'
     ];
 
     const posts = [];
@@ -119,7 +121,7 @@ class BlogManager {
     let title = frontMatter.title;
     if (!title) {
       const titleMatch = markdownContent.match(/^#\s+(.+)$/m);
-      title = titleMatch ? titleMatch[1] : filename.replace('.md', '').replace(/[-_]/g, ' ');
+      title = titleMatch ? titleMatch[1] : filename.replace(/\.(md|txt)$/, '').replace(/[-_]/g, ' ');
     }
 
     // Extract description from front matter or first paragraph
@@ -316,7 +318,7 @@ class BlogManager {
     const postParam = urlParams.get('post');
     if (postParam) {
       const postIndex = this.blogPosts.findIndex(post => 
-        post.filename.replace('.md', '') === postParam
+        post.filename.replace(/\.(md|txt)$/, '') === postParam
       );
       if (postIndex !== -1) {
         this.showArticle(postIndex);
