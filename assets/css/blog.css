@@ -1,11 +1,18 @@
 /* blog.css - Styles for blog-related elements */
 
+/* Ensure blog elements are visible */
+#blog-list {
+  display: flex !important;
+}
+
 /* Blog List Styles */
 .blog-list {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 24px;
   margin-top: 24px;
+  visibility: visible;
+  opacity: 1;
 }
 
 .blog-post-item {
@@ -16,6 +23,8 @@
   transition: box-shadow 0.2s;
   border: 1px solid var(--jet, #383838);
   position: relative;
+  display: block;
+  visibility: visible;
 }
 
 .blog-post-item:hover {
@@ -213,6 +222,101 @@
 .no-posts h3 {
   color: var(--orange-yellow-crayola, #ffd166);
   margin-bottom: 8px;
+}
+
+/* Light Theme Support */
+body.light-theme .blog-post-item {
+  background: var(--light-eerie-black-2, #f5f5f5);
+  border: 1px solid var(--light-jet, #d0d0d0);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+body.light-theme .blog-post-item:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+body.light-theme .post-meta,
+body.light-theme .post-author,
+body.light-theme .post-description {
+  color: var(--light-text-color, #333);
+}
+
+body.light-theme .post-date {
+  color: var(--dark-orange-yellow-crayola, #e6b800);
+}
+
+body.light-theme .post-title {
+  color: var(--light-text-color, #333);
+}
+
+body.light-theme .tag {
+  background: var(--dark-orange-yellow-crayola, #e6b800);
+  color: #ffffff;
+}
+
+body.light-theme .read-more-btn {
+  background: var(--dark-orange-yellow-crayola, #e6b800);
+  color: #ffffff;
+}
+
+body.light-theme .read-more-btn:hover {
+  background: #cc9900;
+}
+
+body.light-theme .article-view {
+  background: var(--light-eerie-black-2, #f5f5f5);
+  border: 1px solid var(--light-jet, #d0d0d0);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+body.light-theme #back-to-list {
+  color: var(--dark-orange-yellow-crayola, #e6b800);
+}
+
+body.light-theme #back-to-list:hover {
+  color: #cc9900;
+}
+
+body.light-theme .article-title {
+  color: var(--light-text-color, #333);
+}
+
+body.light-theme .article-meta,
+body.light-theme .article-author {
+  color: var(--light-text-color, #333);
+}
+
+body.light-theme .article-date {
+  color: var(--dark-orange-yellow-crayola, #e6b800);
+}
+
+body.light-theme .article-body {
+  color: var(--light-text-color, #333);
+}
+
+body.light-theme .article-body h1,
+body.light-theme .article-body h2,
+body.light-theme .article-body h3,
+body.light-theme .article-body h4 {
+  color: var(--dark-orange-yellow-crayola, #e6b800);
+}
+
+body.light-theme .article-body pre,
+body.light-theme .article-body code {
+  background: #f0f0f0;
+  color: #e6b800;
+}
+
+body.light-theme .loading-indicator {
+  color: var(--dark-orange-yellow-crayola, #e6b800);
+}
+
+body.light-theme .no-posts {
+  color: var(--light-text-color, #333);
+}
+
+body.light-theme .no-posts h3 {
+  color: var(--dark-orange-yellow-crayola, #e6b800);
 }
 
 /* Responsive Styles */
