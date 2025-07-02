@@ -1,0 +1,46 @@
+---
+title: "Welcome to My Blog"
+date: "2025-07-02"
+author: "Shanilka Haturusinghe"
+description: "Welcome to my blog where I share insights about AI research, natural language processing, and my journey in academia."
+tags: ["welcome", "introduction", "ai", "nlp"]
+---
+
+# Welcome to My Blog
+
+Hello and welcome to my blog! I'm excited to share this space with you where I'll be writing about my research, thoughts on artificial intelligence, natural language processing, and my academic journey.
+
+## What You Can Expect
+
+In this blog, you'll find:
+
+- **Research Insights**: Deep dives into my work on offensive language detection, especially for low-resource languages like Sinhala
+- **Technical Tutorials**: Step-by-step guides on implementing NLP models and techniques
+- **Industry Observations**: My thoughts on the latest developments in AI and machine learning
+- **Academic Life**: Experiences from my time as a Teaching Assistant and researcher at the University of Kelaniya
+
+## Recent Work
+
+I'm particularly excited about my recent publication at **NAACL 2025 SRW** on "Subasa - Adapting Language Models for Low-resourced Offensive Language Detection in Sinhala." This work represents a significant step forward in making AI more inclusive for underrepresented languages.
+
+The research involved:
+- Developing novel fine-tuning strategies for Sinhala offensive language detection
+- Creating models that outperform existing baselines, including large language models like GPT-4o
+- Making all models and code publicly available to support the research community
+
+## Looking Forward
+
+I believe that AI should be accessible and beneficial for all languages and communities. Through this blog, I hope to share knowledge that can help bridge the gap between high-resource and low-resource language processing.
+
+Whether you're a fellow researcher, a student, or someone curious about AI and NLP, I hope you'll find something valuable here. Feel free to reach out to me through my social media links if you have questions or would like to discuss any of the topics I cover.
+
+## Stay Connected
+
+Make sure to check back regularly for new posts, and don't hesitate to connect with me on [LinkedIn](https://www.linkedin.com/in/s-haturusinghe/) or [GitHub](https://github.com/haturusinghe) for more updates on my work.
+
+Thank you for visiting, and I look forward to sharing this journey with you!
+
+---
+
+*Happy coding and researching!*  
+**Shanilka Haturusinghe**
