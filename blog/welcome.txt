@@ -1,6 +1,6 @@
 ---
 title: "Welcome to My Blog"
-date: "2025-07-02"
+date: "2024-05-02"
 author: "Shanilka Haturusinghe"
 description: "Welcome to my blog where I share insights about AI research, natural language processing, and my journey in academia."
 tags: ["welcome", "introduction", "ai", "nlp"]
@@ -17,7 +17,6 @@ In this blog, you'll find:
 - **Research Insights**: Deep dives into my work on offensive language detection, especially for low-resource languages like Sinhala
 - **Technical Tutorials**: Step-by-step guides on implementing NLP models and techniques
 - **Industry Observations**: My thoughts on the latest developments in AI and machine learning
-- **Academic Life**: Experiences from my time as a Teaching Assistant and researcher at the University of Kelaniya
 
 ## Recent Work
 
@@ -37,8 +36,6 @@ Whether you're a fellow researcher, a student, or someone curious about AI and N
 ## Stay Connected
 
 Make sure to check back regularly for new posts, and don't hesitate to connect with me on [LinkedIn](https://www.linkedin.com/in/s-haturusinghe/) or [GitHub](https://github.com/haturusinghe) for more updates on my work.
-
-Thank you for visiting, and I look forward to sharing this journey with you!
 
 ---
 

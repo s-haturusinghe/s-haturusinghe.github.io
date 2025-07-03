@@ -7,14 +7,6 @@
       "author": "Shanilka Haturusinghe",
       "description": "Welcome to my blog where I share insights about AI research, natural language processing, and my journey in academia.",
       "tags": ["welcome", "introduction", "ai", "nlp"]
-    },
-    {
-      "file": "understanding-llms.md",
-      "title": "Understanding Large Language Models: A Beginner's Guide",
-      "date": "2024-07-01",
-      "author": "Shanilka Haturusinghe",
-      "description": "An introduction to Large Language Models, how they work, and their applications in natural language processing.",
-      "tags": ["llm", "ai", "tutorial", "beginners"]
     }
   ]
 }
