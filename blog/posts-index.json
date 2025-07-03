@@ -15,6 +15,14 @@
       "author": "Shanilka Haturusinghe",
       "description": "This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages.",
       "tags": ["machine learning", "hate speech detection", "ai", "nlp"]
+    },
+    {
+      "file": "off-history-2.md",
+      "title": "A Brief History of Offensive Language Detection - Part 2: The Transformer Revolution",
+      "date": "2024-06-15",
+      "author": "Shanilka Haturusinghe",
+      "description": "In the second part of this series,  we'll dive into the transformer architecture and the era of pre-trained language models that changed everything we thought we knew about processing text.",
+      "tags": ["machine learning", "hate speech detection", "low-resource languages", "nlp"]
     }
   ]
 }
