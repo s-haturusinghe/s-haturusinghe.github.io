@@ -1,0 +1,75 @@
+---
+title: "A Brief History of Offensive Language Detection - Part 4: Advanced Fine-Tuning Techniques and Low-Resource Adaptation"
+date: "2024-07-02"
+author: "Shanilka Haturusinghe"
+description: "In Part 3, we explored how Large Language Models (LLMs) transformed offensive language detection through scale, in-context learning, and advanced fine-tuning methods like RLHF and DPO. But one of the most critical questions still remains: how can we extend these powerful capabilities to low-resource languages? And can this be done without relying on enormous compute infrastructure?
+
+In this final part, we focus on two emerging solutions to this challenge: adapting LLMs for low-resource languages and using parameter-efficient fine-tuning techniques that make this adaptation feasible even under constrained hardware settings."
+tags: ["machine learning", "hate speech detection", "ai", "nlp"]
+
+---
+
+# A Brief History of Offensive Language Detection - Part 4: Advanced Fine-Tuning Techniques and Low-Resource Adaptation
+
+*Published on 2024-07-02 | Reading time: \~10 minutes*
+
+---
+
+## Introduction
+
+In Part 3, we explored how Large Language Models (LLMs) transformed offensive language detection through scale, in-context learning, and advanced fine-tuning methods like RLHF and DPO. But one of the most critical questions still remains: how can we extend these powerful capabilities to low-resource languages? And can this be done without relying on enormous compute infrastructure?
+
+In this final part, we focus on two emerging solutions to this challenge: adapting LLMs for low-resource languages and using parameter-efficient fine-tuning techniques that make this adaptation feasible even under constrained hardware settings.
+
+---
+
+## Adopting LLMs for Low-Resource Languages
+
+Most open-source generative LLMs are pre-trained predominantly on English or other high-resource languages. Adapting them for low-resource languages is therefore non-trivial. However, several methods have been explored, including:
+
+* (i) continuing pretraining using raw non-English data to teach the model the new language's properties,
+* (ii) supervised fine-tuning using instruction or task-specific datasets in the target language, and
+* (iii) extending the model’s vocabulary to include language-specific tokens \[Toraman et al., 2024].
+
+Studies have shown that even with a relatively small dataset, fine-tuned LLMs can perform effectively on language understanding tasks. For instance, Toraman et al. (2024) examined how to adapt LLaMA 2 to Turkish using a range of techniques: continued pretraining, instruction fine-tuning, downstream task fine-tuning (e.g., sentiment analysis), and vocabulary extension. The results indicated that continued pretraining and instruction fine-tuning significantly improved the model’s performance, while vocabulary extension alone had limited impact.
+
+Similarly, Nguyen et al. (2023) used LoRA to fine-tune the LLaMA 2 7B model for offensive language detection, including online sexual predatory chat detection. They used datasets in English, Urdu, and Roman Urdu, and achieved strong results across all three languages—including Urdu, which is a low-resource language.
+
+In another example, García et al. (2024) presented a fine-tuned LLaMA 2 model for Portuguese. It was benchmarked against other LLMs and showed competitive performance across a range of Portuguese-language tasks.
+
+These works collectively highlight a promising direction: through careful fine-tuning strategies, LLMs can be made highly effective in low-resource linguistic contexts, even without massive-scale pretraining.
+
+---
+
+## Parameter-Efficient Fine-Tuning
+
+A major limitation of LLMs is their immense compute and memory demands. Chowdhery et al. (2022) noted that training large models involves managing billions of parameters along with gradients and optimizer states. For example, pretraining LLaMA 7B with a batch size of 1 requires approximately 58 GB of VRAM—well beyond the capacity of a typical high-end GPU like the RTX 4090 \[Zhao et al., 2024].
+
+To address this, researchers have developed **Parameter-Efficient Fine-Tuning (PEFT)** methods. These techniques allow pre-trained models to be adapted to new tasks with only a small subset of their parameters being updated—making fine-tuning much more accessible \[Ding et al., 2022].
+
+### LoRA: Low-Rank Adaptation
+
+One of the most widely adopted PEFT methods is **LoRA (Low-Rank Adaptation)** \[Hu et al., 2021]. During fine-tuning, LoRA inserts a pair of small low-rank matrices into each layer of the model. Only these matrices are trained, while the original model weights remain frozen.
+
+This approach drastically reduces memory and compute requirements, making it feasible to adapt large models without full-scale retraining.
+
+### QLoRA: Quantized LoRA
+
+**QLoRA** takes LoRA a step further by applying quantization to the update matrices \[Dettmers et al., 2023]. The use of low-bit representations minimizes memory usage even further, making it possible to fine-tune models on resource-constrained devices like consumer-grade laptops or mobile phones.
+
+While significantly lighter than full fine-tuning, QLoRA still achieves performance comparable to LoRA. Its lightweight nature makes it especially suitable for deploying offensive language detection in real-world, low-resource scenarios—whether that’s a local NGO working in a specific dialect or a mobile app trying to filter harmful speech on-device.
+
+---
+
+## Final Thoughts
+
+From rule-based filters to massive generative LLMs, the evolution of offensive language detection has mirrored the broader trajectory of natural language processing itself. We’ve gone from models that could only recognize explicit slurs to ones that can reason about nuanced intent across dozens of languages.
+
+The recent advances in low-resource adaptation and parameter-efficient fine-tuning are not just technical milestones—they’re steps toward inclusive, equitable language technology. They make it possible for communities speaking underrepresented languages to benefit from the same protections against harmful content that high-resource languages already enjoy.
+
+This concludes our four-part series on the history of offensive language detection. While the field will continue to evolve, one thing is clear: the fusion of LLMs with thoughtful fine-tuning and equitable design holds the key to safer, smarter digital communication.
+
+---
+
+**Tags:** #LLM #LoRA #QLoRA #FineTuning #LowResourceLanguages #NLP #AI #OffensiveLanguageDetection #EthicalAI #LanguageEquity
+
