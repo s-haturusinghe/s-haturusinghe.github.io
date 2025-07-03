@@ -1,3 +1,9 @@
+/* Fix: Always show article content and body in blog view */
+.article-content, .article-body {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 /* Ensure article view and content are always visible and readable */
 .article-view {
   display: flex !important;
