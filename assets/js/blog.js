@@ -111,8 +111,11 @@ class BlogManager {
       }
     }
 
-    const markdownContent = lines.slice(frontMatterEnd + 1).join('\n').trim();
-    
+    // If front matter was found, skip it; otherwise, use the whole content
+    const markdownContent = frontMatterEnd > 0
+      ? lines.slice(frontMatterEnd + 1).join('\n').trim()
+      : content.trim();
+
     if (!markdownContent) {
       return null;
     }
