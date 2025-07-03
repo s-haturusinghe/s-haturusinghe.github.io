@@ -7,6 +7,14 @@
       "author": "Shanilka Haturusinghe",
       "description": "Welcome to my blog where I share insights about AI research, natural language processing, and my journey in academia.",
       "tags": ["welcome", "introduction", "ai", "nlp"]
+    },
+    {
+      "file": "off-history-1.md",
+      "title": "A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning",
+      "date": "2024-06-01",
+      "author": "Shanilka Haturusinghe",
+      "description": "This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages.",
+      "tags": ["machine learning", "hate speech detection", "ai", "nlp"]
     }
   ]
 }

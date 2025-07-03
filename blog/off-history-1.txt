@@ -1,0 +1,86 @@
+---
+title: "A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning"
+date: "2024-06-01"
+author: "Shanilka Haturusinghe"
+description: "This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages."
+tags: ["machine learning", "hate speech detection", "ai", "nlp"]
+---
+
+# A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning
+
+*Published on 2024-06-01 | Reading time: ~8 minutes*
+
+
+## Introduction
+
+In today's digital age, where billions of people interact through social media platforms, comment sections, and online forums, the challenge of moderating content has become more critical than ever. As I delved into this fascinating area of Natural Language Processing (NLP), I discovered just how complex and nuanced the problem of automatically detecting offensive language really is.
+
+This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages.
+
+---
+
+## The Challenge of Offensive Content Detection
+
+![Placeholder for: A visual representation of social media posts with various types of content, highlighting the scale and diversity of user-generated content across different platforms]
+*Suggested image: An infographic showing the volume of daily social media posts with statistics about content moderation challenges*
+
+Text classification is a prominent research area in the field of natural language processing (NLP). It is the process of automatically classifying documents into one or more predefined classes based on their content or topics.
+
+In recent years, the problem of offensive content detection has gained significant attention from researchers in the fields of Artificial Intelligence and NLP. This increased interest can be assigned to the emergence of social media and the large number of user-generated content and posts that can be found on these platforms, as well as in the comment sections of a variety of websites. The vast amount of content makes it impractical and inefficient to rely simply on inspection by humans for the purpose of finding offensive language content. As a result, it is necessary to develop automated solutions that are accurate.
+
+Detecting offensive language, especially in social media posts is a task that falls under the domain of text classification. However, the implementation of an efficient model for the detection of offensive language is a challenging task. This is due to the fact that the definition of what constitutes offensive content can be subjective and is based on a number of different aspects. Even for humans, evaluating whether the given content is offensive or not can be difficult because it might depend on a variety of aspects such as gender, color, political affiliations, and other similar things. The challenge becomes more evident when we examine machine classifier-based moderators. It was shown that no particular pair of machine moderators demonstrated significant agreement in their ability to detect offensive language, with only a small number of pairings demonstrating a moderate level of agreement. As a consequence of this, the development of a robust and generalizable model that is capable of reliably detecting offensive content across a variety of situations continues to be an important topic of research.
+
+## The Evolution: From Rule-Based to Deep Learning
+
+### Traditional Approaches
+
+In the past, offensive language detection was accomplished by the utilization of lexical-based and rule-based models. After the implementation of these traditional approaches, the adaptation of machine learning models, such as Support Vector Machines (SVM) and Random Forests, which needed manual feature engineering, was carried out.
+
+Furthermore, aside from the the fact that these methods were better compared to the traditional lexical-based and rule-based methods since they took into account syntactic and shallow semantic features, they still had some drawbacks. With the introduction of deep learning techniques, various models such as Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), and Long Short-Term Memory (LSTM) networks have been utilized for the purpose of offensive language detection. These models have demonstrated great performance in addressing issues of this kind.
+
+## The Low Resource Language Challenge
+
+Languages such as English are regarded as high-resource languages due to the fact that they are spoken by twenty percent of the world's population, which is equivalent to one and a half billion people. There is research work in the field of offensive and hate speech detection because of the large-scale availability of human-annotated datasets that may be utilized for study. On account of this popularity and influence on a large population of speakers, there is research interest in this field. Numerous studies have mainly focused their attention on languages that are regarded as high-resource languages, such as English, French, German, and Spanish. The large amount of data in these languages has made it possible to construct advanced models and methods for properly recognizing content that is considered offensive.
+
+When we take into account languages with low resources, there have been research that have demonstrated the difficulties in identifying offensive language in low-resource languages. These studies have shed light on the challenges involved in identifying hatred and abuse in such linguistic conditions.
+
+## Machine Learning Based Approaches
+
+Typically, supervised machine learning algorithms are employed by machine learning-based approaches for the purpose of detecting offensive language. For example, supervised machine learning algorithms like Naïve Bayes, Support Vector Machines, and Logistic Regression are used.
+
+When it comes to the detection of offensive language in Tamil, a study included a comparison of SVM's with other machine learning techniques such as Random Forest, Logistic Regression, and AdaBoost. In another study, researchers made use of SVM's with word embedding to achieve satisfactory performance in detecting cyberbullying in Arabic. Furthermore, a study showed that a modified SVM's that used character n-grams was effective in identifying instances of hate speech in the South African language.
+
+For Naïve Bayes classifiers, research showed the efficiency of Naïve Bayes classifiers in identifying offensive language in Arabic tweets. Furthermore, other work did a comparison of various methods that aim to making offensive language detection explainable. This work highlighted the use of Naïve Bayes as an interpretable machine learning model.
+
+## Deep Learning Approaches
+
+![Placeholder for: A diagram showing the architecture evolution from traditional ML to deep learning approaches, illustrating CNNs, LSTMs, and word embeddings]
+*Suggested image: A flowchart or architectural diagram comparing traditional machine learning pipeline vs. deep learning pipeline for text classification*
+
+The use of deep learning have taken over conventional machine learning methods in the field of offensive language detection in recent times, showing better results compared to their predecessors. The use of deep neural network based classifiers, is the way that this is is achieved.
+
+In practices, Convolutional Neural Networks (CNNs), Long Short-Term Memory (LSTM) networks, and Bidirectional LSTMs (Bi-LSTMs) are some of the commonly used deep nueral network based models that is used for offensive language detection tasks. There are two categories that can be used to represent text that is used as input to these networks. These categories include classic approaches such as TF-IDF and word embeddings methods.
+
+### Word Embeddings with Deep Neural Networks
+
+Word embeddings are numerical vector representations of words. Because of the way that these embeddings encode semantic information, words that are semantically related to one another are positioned in the embedding space in close proximity to one another. In comparison to the frequency-based technique developed by TF-IDF, they offer distributed representations of words that capture semantic and syntactic information, so providing a more comprehensive knowledge of the context in which the words are used.
+
+Word embeddings have been shown to be superior to TF-IDF in certain situations, as was proved by studies. This has resulted in an increase in the accuracy of classifiers used in sentiment analysis and other text classification applications. Models like GloVe, Word2Vec and FastText are popular word embedding methods that have been widely adopted for generating word embeddings to be used with deep learning based approaches for variety of NLP tasks including offensive language detection.
+
+When we look at the studies that have been conducted utilizing this approach, there have been many. For example, one study examined the application of deep learning models, such as Convolutional Neural Networks (CNN) and Bidirectional Long Short-Term Memory (LSTM), along with pre-trained GloVe word embeddings and their aim was to detect instances of hate speech across various datasets. In another study researchers utilized their own word embeddings and used various deep learning classifiers, such as 1D-CNN, LSTMs, and Bi-LSTMs, to facilitate the detection of hate speech.
+
+---
+
+## Looking Ahead
+
+The journey from traditional rule-based systems to sophisticated deep learning models represents a fascinating evolution in how we approach offensive language detection. As we've seen, each approach comes with its own strengths and limitations, and the choice of method often depends on the specific requirements of the task at hand.
+
+In the next part of this series, we'll dive deeper into the technical details of these approaches, exploring specific architectures, evaluation metrics, and the datasets commonly used in this field. We'll also examine some of the cutting-edge research that's pushing the boundaries of what's possible in offensive language detection.
+
+Stay tuned for **Part 2: The Transformer Revolution and Modern Approaches**!
+
+---
+
+*This article is part of my research on offensive language detection in NLP. If you found this interesting, feel free to share your thoughts in the comments below. You can also connect with me on [your social media links] for more updates on my research journey.*
+
+**Tags:** #NLP #MachineLearning #DeepLearning #TextClassification #AI #Research
