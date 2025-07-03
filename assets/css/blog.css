@@ -1,3 +1,25 @@
+/* Ensure article view and content are always visible and readable */
+.article-view {
+  display: flex !important;
+  flex-direction: column;
+  background: var(--background, #fff);
+  color: var(--text, #222);
+  min-height: 300px;
+  padding: 24px 0;
+}
+.article-content, .article-body {
+  display: block !important;
+  color: inherit;
+  background: inherit;
+  min-height: 200px;
+  font-size: 1.1em;
+}
+.article-body h1, .article-body h2, .article-body h3, .article-body h4, .article-body h5, .article-body h6 {
+  color: inherit;
+}
+.article-body p, .article-body ul, .article-body ol {
+  color: inherit;
+}
 /* blog.css - Styles for blog-related elements */
 
 /* Ensure blog elements are visible by default */
