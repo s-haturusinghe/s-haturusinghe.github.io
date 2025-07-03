@@ -1,6 +1,6 @@
 ---
 title: "A Brief History of Offensive Language Detection - Part 4: Advanced Fine-Tuning Techniques and Low-Resource Adaptation"
-date: "2024-07-02"
+date: "2024-03-02"
 author: "Shanilka Haturusinghe"
 description: "In Part 3, we explored how Large Language Models (LLMs) transformed offensive language detection through scale, in-context learning, and advanced fine-tuning methods like RLHF and DPO. But one of the most critical questions still remains: how can we extend these powerful capabilities to low-resource languages? And can this be done without relying on enormous compute infrastructure?
 
@@ -11,7 +11,7 @@ tags: ["machine learning", "hate speech detection", "ai", "nlp"]
 
 # A Brief History of Offensive Language Detection - Part 4: Advanced Fine-Tuning Techniques and Low-Resource Adaptation
 
-*Published on 2024-07-02 | Reading time: \~10 minutes*
+*Published on 2024-03-02 | Reading time: \~10 minutes*
 
 ---
 

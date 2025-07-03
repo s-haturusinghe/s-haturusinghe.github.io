@@ -1,6 +1,6 @@
 ---
 title: "A Brief History of Offensive Language Detection - Part 3: The Era of Large Language Models"
-date: "2024-06-22"
+date: "2024-02-22"
 author: "Shanilka Haturusinghe"
 description: "Part 1 took us from simple rule-based systems to sophisticated deep learning approaches. Part 2 explored the revolutionary impact of transformers and pre-trained language models like BERT. Now, we enter the most transformative era yet: the age of Large Language Models (LLMs).
 
@@ -10,7 +10,7 @@ tags: ["machine learning", "hate speech detection", "ai", "nlp"]
 
 # A Brief History of Offensive Language Detection - Part 3: The Era of Large Language Models
 
-*Published on 2024-06-22 | Reading time: ~12 minutes*
+*Published on 2024-02-22 | Reading time: ~12 minutes*
 
 ---
 

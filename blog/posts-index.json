@@ -3,7 +3,7 @@
     {
       "file": "welcome.md",
       "title": "Welcome to My Blog",
-      "date": "2024-05-02",
+      "date": "2024-01-02",
       "author": "Shanilka Haturusinghe",
       "description": "Welcome to my blog where I share insights about AI research, natural language processing, and my journey in academia.",
       "tags": ["welcome", "introduction", "ai", "nlp"]
@@ -11,7 +11,7 @@
     {
       "file": "off-history-1.md",
       "title": "A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning",
-      "date": "2024-06-01",
+      "date": "2024-02-01",
       "author": "Shanilka Haturusinghe",
       "description": "This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages.",
       "tags": ["machine learning", "hate speech detection", "ai", "nlp"]
@@ -19,7 +19,7 @@
     {
       "file": "off-history-2.md",
       "title": "A Brief History of Offensive Language Detection - Part 2: The Transformer Revolution",
-      "date": "2024-06-15",
+      "date": "2024-02-15",
       "author": "Shanilka Haturusinghe",
       "description": "In the second part of this series,  we'll dive into the transformer architecture and the era of pre-trained language models that changed everything we thought we knew about processing text.",
       "tags": ["machine learning", "hate speech detection", "low-resource languages", "nlp"]
@@ -27,7 +27,7 @@
     {
       "file": "off-history-3.md",
       "title": "A Brief History of Offensive Language Detection - Part 3: The Era of Large Language Models",
-      "date": "2024-06-22",
+      "date": "2024-02-22",
       "author": "Shanilka Haturusinghe",
       "description": "Part 1 took us from simple rule-based systems to sophisticated deep learning approaches. Part 2 explored the revolutionary impact of transformers and pre-trained language models like BERT. Now, we enter the most transformative era yet: the age of Large Language Models (LLMs). This isn't just another incremental improvement—LLMs represent a fundamental shift in how we approach language understanding, bringing capabilities that seemed like science fiction just a few years ago. Let's explore how these massive models are reshaping offensive language detection and what challenges and opportunities they present.",
       "tags": ["machine learning", "hate speech detection", "ai", "nlp"]
@@ -35,7 +35,7 @@
     {
       "file": "off-history-4.md",
       "title": "A Brief History of Offensive Language Detection - Part 4: Advanced Fine-Tuning Techniques and Low-Resource Adaptation",
-      "date": "2024-07-02",
+      "date": "2024-03-02",
       "author": "Shanilka Haturusinghe",
       "description": "In Part 3, we explored how Large Language Models (LLMs) transformed offensive language detection through scale, in-context learning, and advanced fine-tuning methods like RLHF and DPO. But one of the most critical questions still remains: how can we extend these powerful capabilities to low-resource languages? And can this be done without relying on enormous compute infrastructure? In this final part, we focus on two emerging solutions to this challenge: adapting LLMs for low-resource languages and using parameter-efficient fine-tuning techniques that make this adaptation feasible even under constrained hardware settings.",
       "tags": ["machine learning", "hate speech detection", "ai", "nlp"]

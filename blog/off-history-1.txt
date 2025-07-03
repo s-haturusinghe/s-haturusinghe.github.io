@@ -1,6 +1,6 @@
 ---
 title: "A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning"
-date: "2024-06-01"
+date: "2024-02-01"
 author: "Shanilka Haturusinghe"
 description: "This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages."
 tags: ["machine learning", "hate speech detection", "ai", "nlp"]
@@ -8,7 +8,7 @@ tags: ["machine learning", "hate speech detection", "ai", "nlp"]
 
 # A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning
 
-*Published on 2024-06-01 | Reading time: ~8 minutes*
+*Published on 2024-02-01 | Reading time: ~8 minutes*
 
 
 ## Introduction
