@@ -387,7 +387,7 @@ body.light-theme .no-posts h3 {
 /* Ensure article content don't overflow on medium screens */
 @media (min-width: 580px) and (max-width: 1250px) {
   .article-content {
-    max-width: calc(100% - 100px);
+    max-width: calc(100% - 50px);
     margin: 0 auto;
   }
 }
