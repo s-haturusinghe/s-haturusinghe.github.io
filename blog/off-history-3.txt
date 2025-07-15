@@ -2,10 +2,8 @@
 title: "A Brief History of Offensive Language Detection - Part 3: The Era of Large Language Models"
 date: "2024-02-22"
 author: "Shanilka Haturusinghe"
-description: "Part 1 took us from simple rule-based systems to sophisticated deep learning approaches. Part 2 explored the revolutionary impact of transformers and pre-trained language models like BERT. Now, we enter the most transformative era yet: the age of Large Language Models (LLMs).
-
-This isn't just another incremental improvement—LLMs represent a fundamental shift in how we approach language understanding, bringing capabilities that seemed like science fiction just a few years ago. Let's explore how these massive models are reshaping offensive language detection and what challenges and opportunities they present."
-tags: ["machine learning", "hate speech detection", "ai", "nlp"]
+description: "Part 1 took us from simple rule-based systems to sophisticated deep learning approaches. Part 2 explored the revolutionary impact of transformers and pre-trained language models like BERT. Now, we enter the most transformative era yet: the age of Large Language Models (LLMs)."
+tags: ["LLMs", "hate speech detection", "ai", "nlp", "gpt", "llama", "rlhf", "dpo"]
 ---
 
 # A Brief History of Offensive Language Detection - Part 3: The Era of Large Language Models
@@ -18,14 +16,11 @@ tags: ["machine learning", "hate speech detection", "ai", "nlp"]
 
 In our journey through the evolution of offensive language detection, we've witnessed remarkable transformations. Part 1 took us from simple rule-based systems to sophisticated deep learning approaches. Part 2 explored the revolutionary impact of transformers and pre-trained language models like BERT. Now, we enter the most transformative era yet: the age of Large Language Models (LLMs).
 
-This isn't just another incremental improvement—LLMs represent a fundamental shift in how we approach language understanding, bringing capabilities that seemed like science fiction just a few years ago. Let's explore how these massive models are reshaping offensive language detection and what challenges and opportunities they present.
 
 ---
 
-## The Scale Revolution: What Makes LLMs Different
+## What Makes LLMs Different
 
-![Placeholder for: A visualization comparing the scale of different models from traditional ML to PLMs to LLMs, showing parameter counts and training data sizes]
-*Suggested image: An infographic showing the exponential growth in model parameters from early neural networks to modern LLMs, with timeline and key milestones*
 
 LLMs are transformer-based neural language models that have gained a lot of attention due to their massive size. These models contain tens to hundreds of billions of parameters and are pretrained on huge quantities of text data. This allows them to achieve outstanding performance in a variety of natural language tasks.
 
@@ -35,21 +30,14 @@ While PLMs such as BERT and RoBERTa have shown impressive performance on a varie
 
 ## The GPT Revolution and Beyond
 
-### The Breakthrough Moment
-
 Because of its huge scale, the GPT-3 model, which belongs to the Generative Pre-trained Transformer (GPT) family of LLMs, represented a significant milestone in the field of natural language processing. GPT-3 is an autoregressive language model that has been pre-trained and has 175 billion parameters. Since GPT-3 was first released, OpenAI has released new models that are better, such as GPT-3.5, GPT-4, and the most recent GPT-4o. On significant number of NLP benchmarks, these models have achieved state-of-the-art performance.
 
-The impact of GPT-3 on offensive language detection cannot be overstated. Unlike previous models that required extensive fine-tuning for specific tasks, GPT-3 demonstrated the ability to understand and respond to offensive content through simple prompting—a capability that opened up entirely new approaches to content moderation.
 
-### The Open Source Movement
+### Open Source LLMs
 
 The recent open source LLM models, such as Llama 2, which was made available by Meta AI, have been trained on two trillion tokens of text data from publicly available data sources. Additionally, the number of parameters in this family of models ranges from 7 billion to 70 billion. In comparison to the Llama 2 model, the Llama 3 family of models, which was released very recently and ranges from 8 billion to 70 billion parameter models, offers a major increase in language generation and understanding capabilities. Llama 3 was pretrained on more than 15 trillion tokens, which is a dataset that is seven times larger than Llama 2. This allowed it to establish new state-of-the-art performance on many benchmarks for open-source language models. Other open-source models, such as Mistral, which includes Mistral 7B, have been shown to outperform Llama 2 13B and even Llama 1 34B on a number of benchmarks. These open source families of models have enabled increased efficiency and accuracy while reducing the model's complexity and memory requirements for the training process.
 
-The democratization of powerful language models through open-source releases has been particularly significant for offensive language detection research. It has enabled researchers and smaller organizations to experiment with state-of-the-art models without the massive computational costs previously required.
-
 ## The Low-Resource Language Challenge
-
-### Persistent Inequalities
 
 Large language models have shown outstanding results on a variety of NLP tasks in high-resource languages such as English; however, their capabilities in low-resource languages are frequently considered to be severely limited. In studies where LLMs were evaluated against standard NLP benchmarks across 16 NLP datasets in 70 topologically different languages, these limitations are highlighted by the results of this study. This limitation can be due to the uneven distribution of training data, with a disproportionate amount of data coming from languages with high resources. It is possible that as a result, LLMs will have difficulty adequately capturing the nuances and linguistic patterns of low resource languages.
 
@@ -57,42 +45,23 @@ As a result of the high compute resource costs for training LLMs, studies have s
 
 This disparity in language coverage has significant implications for offensive language detection. Communities speaking low-resource languages may not benefit from the same level of automated content moderation, potentially leaving them more vulnerable to online harassment and hate speech.
 
-## Fine-tuning LLMs: A New Paradigm
+## Fine-tuning LLMs
 
-![Placeholder for: A diagram showing the evolution of fine-tuning approaches from traditional supervised learning to modern RLHF and DPO methods]
-*Suggested image: A flowchart comparing traditional fine-tuning vs. modern LLM fine-tuning approaches (SFT, RLHF, DPO) with their respective advantages and use cases*
-
-### Supervised Fine-Tuning: The Foundation
+### Supervised Fine-Tuning
 
 Two key techniques have been developed for the purpose of fine-tuning LLMs. These methods are known as Supervised Fine-Tuning (SFT) and Reinforcement Learning from Human Feedback (RLHF). A significant number of LLM fine-tuning procedures are built on the foundation of supervised fine-tuning. In this stage, a well curated dataset of high quality examples is used to train the model. Usually, human provided responses or information created by experts are included in these cases. The goal of this stage is to train the model in the direction toward generating outputs that closely match the style, quality, and accuracy of these example demonstrations. With the assistance of SFT, it is possible to develop a reliable baseline model that is capable of producing responses that are consistent and appropriate for the context in which they are being used.
 
-### Reinforcement Learning from Human Feedback: The Game Changer
+### Reinforcement Learning from Human Feedback
 
 Many groups and researchers use Reinforcement Learning from Human Feedback (RLHF) after the SFT phase to make the model even more enhanced. RLHF introduces human feedback into the training process of the model where human annotators will examine and assess the quality of the outputs generated by the model and provide feedback. This feedback is used to improve the quality of the generations of the model and make them more aligned with the human preferences. Two main methods have been developed within the context of the RLHF: reward-based and reward-free methods. In addition to addressing the task of fine-tuning from various perspectives, each of these strategies possesses distinct advantages.
 
-### Reward-Based Methods: The Industry Standard
-
 Companies like OpenAI have set the standard for reward-based strategies, which entail creating a unique reward model. The data about human preferences is utilized to train this reward model, which eventually acquires the ability to figure out the preferred reply among two options supplied to a human. Once established, the reward model serves as a substitute for human evaluation, providing a consistent signal that guides the process of refining. Actor-critic approaches, such as Proximal Policy Optimization (PPO), are subsequently used to optimize the generations of the LLM in relation to the provided reward signal. This method makes it possible to use a more thorough optimization process, producing results that are more in line with what humans would expect.
-
-### Reward-Free Methods: Simplifying the Process
 
 On the other hand, reward-free methods have become increasingly popular as an alternate strategy that makes the RLHF implementation process more straightforward. Among the most notable instances that fall under this category are Direct Preference Optimization (DPO), Rank-based Reinforcement Human Feedback (RRHF), and Preference-based Reinforcement Optimization (PRO). These techniques differentiate themselves from others by removing the requirement for an explicit reward mechanism and concentrating their attention solely on the optimization of policies.
 
 Direct Preference Optimization (DPO), a well-known reward-free method, takes a novel approach by describing the reward function in terms of the logarithm of the policy itself. This is a new approach. Through this reformulation, DPO is able to get around the complexity of maintaining a distinct reward model as well as the potential instabilities that are connected with actor-critic training. Instead, DPO directly optimizes the policy to coincide with human preferences, which may enable a fine-tuning procedure that is more streamlined and efficient on the whole.
 
 Particularly, the most popular applications, such as ChatGPT and Claude, are produced by the reward-based RLHF technique PPO. On the other hand, the reward-free RLHF method DPO frequently ends up producing strong performances in academic benchmarks.
-
-## Implications for Offensive Language Detection
-
-The emergence of LLMs has fundamentally changed the landscape of offensive language detection in several ways:
-
-**Scale and Capability**: LLMs can understand context, nuance, and subtlety in ways that previous models couldn't, making them more effective at detecting sophisticated forms of offensive language.
-
-**Few-Shot Learning**: The ability to perform well with minimal examples means LLMs can be quickly adapted to new types of offensive content or emerging linguistic patterns.
-
-**Multilingual Understanding**: While challenges remain for low-resource languages, LLMs have shown unprecedented capability in cross-lingual understanding and transfer.
-
-**Ethical Considerations**: The power of LLMs also raises new questions about bias, fairness, and the potential for misuse in content moderation systems.
 
 ---
 
@@ -106,6 +75,40 @@ Stay tuned for **Part 4: Advanced Fine-tuning Techniques and Future Directions**
 
 ---
 
-*This article is part of my research on offensive language detection in NLP. If you found this interesting, feel free to share your thoughts in the comments below. You can also connect with me on [your social media links] for more updates on my research journey.*
+## References
+
+[1] A. Chowdhery, S. Narang, J. Devlin, M. Bosma, G. Mishra, A. Roberts, P. Barham, H. W. Chung, C. Sutton, S. Gehrmann, P. Schuh, K. Shi, S. Tsvyashchenko, J. Maynez, A. Rao, P. Barnes, Y. Tay, N. Shazeer, V. Prabhakaran, E. Reif, N. Du, B. Hutchinson, R. Pope, J. T. Bradbury, J. Austin, M. Isard, G. Gur-Ari, P. Yin, T. Duke, A. Levskaya, S. Ghemawat, S. Dev, H. Michalewski, X. García, V. Misra, K. Robinson, F. Liam, D. Zhou, D. Ippolito, D. Luan, H. Lim, B. Zoph, R. Sepassi, D. Dohan, S. Agrawal, M. Omernick, A. M. Dai, T. S. Pillai, M. Pellat, A. Lewkowycz, E. R. Moreira, R. Child, O. Polozov, K. Lee, Z. Zhou, X. Wang, B. Saeta, M. Díaz, O. Frat, M. Catasta, J. Lee, K. Meier-Hellstern, D. Eck, J. Dean, S. Petrov, and N. Fiedel, "PaLM: Scaling Language Modeling With Pathways," 2022.
+
+[2] M. A. Haque and S. Li, "Exploring ChatGPT and Its Impact on Society," AI and Ethics, 2024.
+
+[3] H. Touvron, L. Martin, K. R. Stone, P. Albert, A. Almahairi, Y. Babaei, N. Bashlykov, S. Batra, P. Bhargava, S. Bhosale, D. M. Bikel, L. Blecher, C. C. Ferrer, M. Chen, G. Cucurull, D. Esiobu, J. Fernandes, J. Fu, W. Fu, B. Fuller, C. Gao, V. Goswami, N. Goyal, A. S. Hartshorn, S. Hosseini, R. Hou, H. Inan, M. Kardas, V. Kerkez, M. Khabsa, I. M. Kloumann, A. V. Korenev, P. S. Koura, M.-A. Lachaux, T. Lavril, J. Lee, D. Liskovich, Y. Lu, Y. Mao, X. Martinet, T. Mihaylov, P. Mishra, I. Molybog, Y. Nie, A. Poulton, J. Reizenstein, R. Rungta, K. Saladi, A. Schelten, R. Silva, E. M. Smith, R. Subramanian, X. Tan, B. Tang, R. Taylor, A. Williams, J. X. Kuan, P. Xu, Z. Yan, I. Zarov, Y. Zhang, A. Fan, M. Kambadur, S. Narang, A. Rodriguez, R. Stojnic, S. Edunov, and T. Scialom, "Llama 2: Open Foundation and Fine-Tuned Chat Models," ArXiv, vol. abs/2307.09288, 2023.
+
+[4] A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. Al-Dahle, A. Letman, A. Mathur, A. Schelten, A. Yang, A. Fan, et al., "The llama 3 herd of models," arXiv preprint arXiv:2407.21783, 2024.
+
+[5] A. Q. Jiang, A. Sablayrolles, A. Mensch, C. Bamford, D. S. Chaplot, D. de las Casas, F. Bressand, G. Lengyel, G. Lample, L. Saulnier, L. R. Lavaud, M.-A. Lachaux, P. Stock, T. L. Scao, T. Lavril, T. Wang, T. Lacroix, and W. E. Sayed, "Mistral 7b," 2023.
+
+[6] K. Ahuja, R. Hada, M. Ochieng, P. Jain, H. Diddee, K. Ramesh, S. Maina, T. Ganu, S. Segal, M. Axmed, K. Bali, and S. Sitaram, "MEGA: Multilingual Evaluation of Generative AI," ArXiv, vol. abs/2303.12528, 2023.
+
+[7] W. X. Zhao, K. Zhou, J. Li, T. Tang, X. Wang, Y. Hou, Y. Min, B. Zhang, J. Zhang, Z. Dong, Y. Du, C. Yang, Y. Chen, Z. Chen, J. Jiang, R. Ren, Y. Li, X. Tang, Z. Liu, P. Liu, J. Nie, and J.-r. Wen, "A Survey of Large Language Models," ArXiv, vol. abs/2303.18223, 2023.
+
+[8] X. Zhang, S. Li, B. Hauer, N. Shi, and G. Kondrak, "Don't Trust ChatGPT when your Question is not in English: A Study of Multilingual Abilities and Types of LLMs," in Conference on Empirical Methods in Natural Language Processing, 2023.
+
+[9] B. Peng, C. Li, P. He, M. Galley, and J. Gao, "Instruction tuning with GPT-4," CoRR, vol. abs/2304.03277, 2023.
+
+[10] D. M. Ziegler, N. Stiennon, J. Wu, T. B. Brown, A. Radford, D. Amodei, P. F. Christiano, and G. Irving, "Fine-tuning language models from human preferences," CoRR, vol. abs/1909.08593, 2019.
+
+[11] N. Stiennon, L. Ouyang, J. Wu, D. M. Ziegler, R. Lowe, C. Voss, A. Radford, D. Amodei, and P. F. Christiano, "Learning to summarize with human feedback," in Advances in Neural Information Processing Systems 33: Annual Conference on Neural Information Processing Systems 2020, NeurIPS 2020, December 6-12, 2020, virtual (H. Larochelle, M. Ranzato, R. Hadsell, M. Balcan, and H. Lin, eds.), 2020.
+
+[12] L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. L. Wainwright, P. Mishkin, C. Zhang, S. Agarwal, K. Slama, A. Ray, J. Schulman, J. Hilton, F. Kelton, L. Miller, M. Simens, A. Askell, P. Welinder, P. F. Christiano, J. Leike, and R. Lowe, "Training language models to follow instructions with human feedback," in Advances in Neural Information Processing Systems 35: Annual Conference on Neural Information Processing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 - December 9, 2022 (S. Koyejo, S. Mohamed, A. Agarwal, D. Belgrave, K. Cho, and A. Oh, eds.), 2022.
+
+[13] N. Sanghi, Proximal Policy Optimization (PPO) and RLHF, pp. 461–522. 07 2024.
+
+[14] R. Rafailov, A. Sharma, E. Mitchell, S. Ermon, C. D. Manning, and C. Finn, "Direct preference optimization: Your language model is secretly a reward model," CoRR, vol. abs/2305.18290, 2023.
+
+[15] Z. Yuan, H. Yuan, C. Tan, W. Wang, S. Huang, and F. Huang, "RRHF: rank responses to align language models with human feedback without tears," CoRR, vol. abs/2304.05302, 2023.
+
+[16] F. Song, B. Yu, M. Li, H. Yu, F. Huang, Y. Li, and H. Wang, "Preference ranking optimization for human alignment," CoRR, vol. abs/2306.17492, 2023.
+
+---
 
 **Tags:** #LLM #GPT #ChatGPT #RLHF #DPO #NLP #MachineLearning #AI #Research #OffensiveLanguageDetection
