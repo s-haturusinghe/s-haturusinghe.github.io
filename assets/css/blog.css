@@ -367,10 +367,19 @@ body.light-theme .no-posts h3 {
   
   }
 
-  /* Responsive Styles - for blog related items when screen width is more than 576px */
-  @media (min-width: 576px) {
-    .blog-post-item {
-      width: 450px !important;
-      padding: 20px;
-    }
+/* Responsive Styles - for blog related items when screen width is more than 576px */
+@media (min-width: 576px) {
+  .blog-post-item {
+    max-width: 450px;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Ensure blog post items don't overflow on medium screens */
+@media (min-width: 576px) and (max-width: 1250px) {
+  .blog-post-item {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+  }
 }
