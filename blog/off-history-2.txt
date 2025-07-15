@@ -3,7 +3,7 @@ title: "A Brief History of Offensive Language Detection - Part 2: The Transforme
 date: "2024-02-15"
 author: "Shanilka Haturusinghe"
 description: "In the second part of this series,  we'll dive into the transformer architecture and the era of pre-trained language models that changed everything we thought we knew about processing text."
-tags: ["machine learning", "hate speech detection", "ai", "nlp"]
+tags: ["machine learning", "deep learning", "Transformers", "BERT"]
 ---
 
 # A Brief History of Offensive Language Detection - Part 2: The Transformer Revolution
@@ -22,18 +22,12 @@ Welcome to Part 2, where we'll dive into the transformer architecture and the er
 
 ## The Transformer Revolution
 
-![Placeholder for: A diagram showing the transformer architecture with self-attention mechanism, comparing it to previous RNN/LSTM sequential processing]
-*Suggested image: Side-by-side comparison of RNN sequential processing vs. Transformer parallel processing with self-attention visualization*
-
 Many of the limitations that were associated with previously popular architectures such as LSTMs were addressed with the introduction of the Transformer architecture, which resulted in a revolution in the domains of artificial intelligence, specifically in natural language processing. Transformer models, in comparison to other deep learning models such as recurrent neural networks (RNNs) and long short-term memory (LSTMs), make use of a self-attention mechanism. This mechanism enables the dynamic leveraging of various sections of the input without any loss of information, even for distant parts of the input.
 
 This architecture has proven to be very useful for the detection of offensive language, which is a topic in which the context and the way words are used have an important impact when deciding whether or not a text is offensive. When it comes to the identification of offensive language, studies have demonstrated that transformer-based models perform better than LSTM, Bi-LSTM, and CNN-based techniques.
 
-The key innovation wasn't just in the architecture itself, but in how transformers could process entire sequences simultaneously rather than sequentially, making them both more efficient and better at capturing long-range dependencies in text—crucial for understanding context in potentially offensive content.
 
 ## Pre-trained Language Models and Transfer Learning
-
-### The Birth of Modern NLP
 
 Using PLMs has become a highly effective method in natural language processing. It enables transfer learning and the utilization of knowledge gained from extensive pre-training on large text collections. Models like BERT and RoBERTa have shown great results in learning language representations from unstructured text data, showing in outstanding performance across a range of NLP tasks.
 
@@ -41,7 +35,7 @@ A self-supervised objective is typically used to train these models. Masking lan
 
 Another self-supervised objective utilized in models such as the BERT is the Next Sentence Prediction (NSP) objective in which objective involves deciding if a given sentence follows another sentence in the given text. Specifically, the model receives sentence pairs during training. Second sentences in the pair may be the actual following sentence in the text or random sentence from the corpus. The model has to figure out whether the second sentence follows the first or not.
 
-### The Power of Pre-training
+### Pre-training
 
 Pre-training is a technique that involves training a model on millions or billions of tokens in order to learn general language representations. This is done before the model is fine-tuned for specific tasks, which enables the model to make use of the knowledge that it has gained during the pre-training phase in order to improve its performance on specific tasks.
 
@@ -49,26 +43,17 @@ The process of supervised fine-tuning, which involves fine-tuning a pre-trained 
 
 ## Fine-tuning and Transfer Learning
 
-![Placeholder for: A flowchart showing the pre-training to fine-tuning pipeline, illustrating how general language knowledge transfers to specific offensive language detection tasks]
-*Suggested image: A visual representation of the transfer learning process from pre-training on general text to fine-tuning on offensive language detection datasets*
-
 As a result of the fact that PLMs are trained for general language tasks such as masked language modeling during the pre-training phase, they need to be fine-tuned before we can use them for any downstream task such as a text classification task. The most common method for this is called Vanilla Fine-tuning, and it consists of taking the weights of the pre-trained language model (PLM) and then adjusting them with task-specific data in order to learn the task representation.
-
-### Breaking Language Barriers
 
 In low-resource language environments, transfer learning has shown to be a promising method for offensive language identification. The process involves training a classification model on a language which is high resourced, like English, using a cross-lingual transformer model. Afterwards, the weights for a new language are initialized based on the saved weights from English.
 
 One of the key developments in transfer learning for offensive language detection has been the introduction of cross-lingual transformer models, such as XLM-RoBERTa (XLM-R) which is a multilingual variant of RoBERTa. These models are pre-trained on large corpora covering multiple languages including low resource languages, enabling them to capture cross-lingual representations and facilitate knowledge transfer across languages. Studies demonstrate utilizing XLM-R model which is first trained on an English OLID Dataset and then the weights of the entire model are saved and used to initialize the weights for the target low-resource languages by testing on Hindi, Spanish and Bengali datasets which have shown effectiveness in offensive language detection for low-resource languages.
 
-## Advanced Transfer Learning: Pre-fine Tuning
-
-### The Three-Stage Learning Paradigm
+## Pre-fine tuning on intermedia tasks
 
 Research has demonstrated that pre-finetuning pre-trained models such as BERT on an intermediate task before fine-tuning them on the downstream task can improve their performance in natural language understanding tasks. Pre-finetuning is an intermediate phase of learning that occurs after language model pre-training and before fine-tuning. This method allows the transfer of knowledge and representations from one task to another, particularly in situations where compositionality and generalization are essential.
 
 According to studies, the results show that implementing a pre-finetuning approach for BERT models, generally leads to better performance in offensive language detection across various metrics. This demonstrates the effectiveness of this strategy in accurately identifying hate speech.
-
-This three-stage approach—pre-training, pre-fine-tuning, and fine-tuning—represents a sophisticated understanding of how to leverage the hierarchical nature of language understanding, from general linguistic patterns to domain-specific nuances, and finally to task-specific requirements.
 
 ---
 
@@ -76,7 +61,7 @@ This three-stage approach—pre-training, pre-fine-tuning, and fine-tuning—rep
 
 The introduction of transformers and pre-trained language models marked a turning point in offensive language detection. These models didn't just improve performance metrics; they fundamentally changed how we approach the problem. The ability to capture long-range dependencies, understand context more effectively, and transfer knowledge across languages opened up new possibilities for content moderation at scale.
 
-The success of BERT, RoBERTa, and their variants in offensive language detection tasks demonstrated that general language understanding could be successfully specialized for specific applications. This paradigm shift laid the groundwork for even more sophisticated approaches that we'll explore in our final part.
+The success of BERT, RoBERTa, and their variants in offensive language detection tasks demonstrated that general language understanding could be successfully specialized for specific applications. This paradigm shift laid the groundwork for even more sophisticated approaches that we'll explore in our next part.
 
 In Part 3, we'll examine how the evolution continued with Large Language Models (LLMs), exploring how models like GPT, T5, and their successors have pushed the boundaries even further, introducing new capabilities and challenges in offensive language detection.
 
@@ -84,6 +69,40 @@ Stay tuned for **Part 3: The Era of Large Language Models**!
 
 ---
 
-*This article is part of my research on offensive language detection in NLP. If you found this interesting, feel free to share your thoughts in the comments below. You can also connect with me on [your social media links] for more updates on my research journey.*
+## References
+
+[1] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, "Attention is all you need," in *Advances in Neural Information Processing Systems*, vol. 2017-December, 2017. ISSN: 10495258.
+
+[2] R. Awal, R. Cao, R. K.-W. Lee, and S. Mitrovic, "AngryBERT: Joint Learning Target and Emotion for Hate Speech Detection," in *Pacific-Asia Conference on Knowledge Discovery and Data Mining*, 2021.
+
+[3] J. Devlin, M. W. Chang, K. Lee, and K. Toutanova, "BERT: Pre-training of deep bidirectional transformers for language understanding," in *NAACL HLT 2019 - 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies - Proceedings of the Conference*, vol. 1, 2019.
+
+[4] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer, and V. Stoyanov, "RoBERTa: A Robustly Optimized BERT Pretraining Approach," *ArXiv*, vol. abs/1907.11692, 2019.
+
+[5] X. Wang, T. Gao, Z. Zhu, Z. Zhang, Z. Liu, J. Li, and J. Tang, "KEPLER: A Unified Model for Knowledge Embedding and Pre-Trained Language Representation," *Transactions of the Association for Computational Linguistics*, vol. 9, pp. 176–194, 2021.
+
+[6] S. Minaee, T. Mikolov, N. Nikzad, M. Chenaghlu, R. Socher, X. Amatriain, and J. Gao, "Large Language Models: A Survey," Feb. 2024.
+
+[7] M. S. Jahan, D. R. Beddiar, M. C. Oussalah, N. Arhab, and Y. Bounab, "Hate and Offensive Language Detection using BERT for English Subtask A," in *Fire*, 2021.
+
+[8] M. J. Althobaiti, "BERT-based Approach to Arabic Hate Speech and Offensive Language Detection in Twitter: Exploiting Emojis and Sentiment Analysis," *International Journal of Advanced Computer Science and Applications*, 2022.
+
+[9] H. Rathnayake, J. Sumanapala, R. Rukshani, and S. Ranathunga, "Adapter Based Fine-Tuning of Pre-Trained Multilingual Language Models for Code-Mixed and Code-Switched Text Classification," May 2022.
+
+[10] A. Conneau, K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek, F. Guzmán, E. Grave, M. Ott, L. Zettlemoyer, and V. Stoyanov, "Unsupervised Cross-lingual Representation Learning at Scale," in *Annual Meeting of the Association for Computational Linguistics*, 2019.
+
+[11] T. Ranasinghe and M. Zampieri, "Multilingual Offensive Language Identification with Cross-lingual Embeddings," in *Conference on Empirical Methods in Natural Language Processing*, 2020.
+
+[12] T. Ranasinghe, M. Zampieri, and H. Hettiarachchi, "BRUMS at HASOC 2019: Deep Learning Models for Multilingual Hate Speech and Offensive Language Identification," in *Fire*, 2019.
+
+[13] Y. Pruksachatkun, J. Phang, H. Liu, P. M. Htut, X. Zhang, R. Y. Pang, C. Vania, K. Kann, and S. R. Bowman, "Intermediate-Task Transfer Learning with Pretrained Language Models: When and Why Does It Work?," in *Annual Meeting of the Association for Computational Linguistics*, 2020.
+
+[14] A. Aghajanyan, A. Gupta, A. Shrivastava, X. Chen, L. Zettlemoyer, and S. Gupta, "Muppet: Massive Multi-task Representations with Pre-Finetuning," *ArXiv*, vol. abs/2101.11038, 2021.
+
+[15] Z. Wang, P. J. Shaw, T. Linzen, and F. Sha, "Learning to Generalize Compositionally by Transferring Across Semantic Parsing Tasks," 2021.
+
+[16] J. Kim, B. Lee, and K.-a. Sohn, "Why Is It Hate Speech? Masked Rationale Prediction for Explainable Hate Speech Detection," *ArXiv*, vol. abs/2211.00243, 2022.
+
+---
 
 **Tags:** #NLP #Transformers #BERT #MachineLearning #DeepLearning #TextClassification #AI #Research
