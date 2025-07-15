@@ -364,4 +364,11 @@ body.light-theme .no-posts h3 {
   .article-title {
     font-size: 1.3em;
   }
+  /* Responsive Styles - for blog related items when screen width is more than 576px */
+  @media (min-width: 576px) {
+    .blog-post-item {
+      width: 500px !important;
+    }
+    
+  }
 }
