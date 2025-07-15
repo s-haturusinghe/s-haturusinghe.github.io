@@ -383,3 +383,10 @@ body.light-theme .no-posts h3 {
     margin: 0 auto;
   }
 }
+
+/* Remove max-width restriction for blog-post-item on large screens */
+@media (min-width: 1251px) {
+  .blog-post-item {
+    max-width: none;
+  }
+}
