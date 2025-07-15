@@ -294,12 +294,16 @@ class BlogManager {
   showBlogList() {
     const blogList = document.getElementById('blog-list');
     const articleView = document.getElementById('article-view');
+    const articleContent = document.getElementById('article-content');
 
     // Update browser URL
     window.history.pushState({}, 'Blog', window.location.pathname);
 
     blogList.style.display = 'flex';
     articleView.style.display = 'none';
+    if (articleContent) {
+      articleContent.innerHTML = '';
+    }
     this.currentArticle = null;
     
     // Debug logging
