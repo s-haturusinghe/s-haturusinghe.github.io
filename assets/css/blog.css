@@ -6,7 +6,7 @@
 }
 /* Ensure article view and content are always visible and readable */
 .article-view {
-  display: flex;
+  display: none;
   flex-direction: column;
   background: var(--background, #fff);
   color: var(--text, #222);
