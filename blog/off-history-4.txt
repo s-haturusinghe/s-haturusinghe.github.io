@@ -3,9 +3,8 @@ title: "A Brief History of Offensive Language Detection - Part 4: Advanced Fine-
 date: "2024-03-02"
 author: "Shanilka Haturusinghe"
 description: "In Part 3, we explored how Large Language Models (LLMs) transformed offensive language detection through scale, in-context learning, and advanced fine-tuning methods like RLHF and DPO. But one of the most critical questions still remains: how can we extend these powerful capabilities to low-resource languages? And can this be done without relying on enormous compute infrastructure?
-
-In this final part, we focus on two emerging solutions to this challenge: adapting LLMs for low-resource languages and using parameter-efficient fine-tuning techniques that make this adaptation feasible even under constrained hardware settings."
-tags: ["machine learning", "hate speech detection", "ai", "nlp"]
+"
+tags: ["#LLM", "#LoRA", "#QLoRA", "#FineTuning"]
 
 ---
 
@@ -19,23 +18,20 @@ tags: ["machine learning", "hate speech detection", "ai", "nlp"]
 
 In Part 3, we explored how Large Language Models (LLMs) transformed offensive language detection through scale, in-context learning, and advanced fine-tuning methods like RLHF and DPO. But one of the most critical questions still remains: how can we extend these powerful capabilities to low-resource languages? And can this be done without relying on enormous compute infrastructure?
 
-In this final part, we focus on two emerging solutions to this challenge: adapting LLMs for low-resource languages and using parameter-efficient fine-tuning techniques that make this adaptation feasible even under constrained hardware settings.
 
 ---
 
 ## Adopting LLMs for Low-Resource Languages
 
-Most open-source generative LLMs are pre-trained predominantly on English or other high-resource languages. Adapting them for low-resource languages is therefore non-trivial. However, several methods have been explored, including:
+As the majority of open-source generative LLMs are pre-trained primarily on English  data, adapting these models for low-resource languages is a challenge. Several methods  have been investigated to address this issue, including:
 
 * (i) continuing pretraining using raw non-English data to teach the model the new language's properties,
 * (ii) supervised fine-tuning using instruction or task-specific datasets in the target language, and
-* (iii) extending the model’s vocabulary to include language-specific tokens \[Toraman et al., 2024].
+* (iii) extending the model’s vocabulary to include language-specific tokens.
 
-Studies have shown that even with a relatively small dataset, fine-tuned LLMs can perform effectively on language understanding tasks. For instance, Toraman et al. (2024) examined how to adapt LLaMA 2 to Turkish using a range of techniques: continued pretraining, instruction fine-tuning, downstream task fine-tuning (e.g., sentiment analysis), and vocabulary extension. The results indicated that continued pretraining and instruction fine-tuning significantly improved the model’s performance, while vocabulary extension alone had limited impact.
+Studies has shown that even with a relativly small amount of training data, fine-tuned  LLMs may successfully complete tasks related to natural language comprehension in a  variety of languages. For example, the study by Toraman et al. (2024) investigates the the adoption of LLMs  to low resourced languages, with a particular focus on the Turkish language. Continuous  training, instruction fine-tuning, task-specific fine-tuning (for the downstream task of  sentiment analysis), and vocabulary extension of the tokenizer are some of the approaches  that are examined in this study using a Llama 2 model. The findings suggest that language  comprehension and performance of the model for the given low resource language, can be improved by continuous pre-training and instruction fine-tuning, although vocabulary  extension does not give any significant benefits.
 
-Similarly, Nguyen et al. (2023) used LoRA to fine-tune the LLaMA 2 7B model for offensive language detection, including online sexual predatory chat detection. They used datasets in English, Urdu, and Roman Urdu, and achieved strong results across all three languages—including Urdu, which is a low-resource language.
-
-In another example, García et al. (2024) presented a fine-tuned LLaMA 2 model for Portuguese. It was benchmarked against other LLMs and showed competitive performance across a range of Portuguese-language tasks.
+Similarly, Nguyen et al. (2023) investigated how the Llama 2 7B model can be adapted for detecting  online sexual predatory chats and abusive texts by fine-tuning using low-rank adapters  (LoRA). They conducted fine-tuning for the downstream task using English, Urdu, and  Roman Urdu datasets with consistent fine-tuning parameters across all 3 experiments and  were able to demonstrate strong performance across all 3 languages, including including  Urdu, which is a low-resource language. In the work García et al. (2024) they introduced a fine-tuned  Llama 2-based model, specifically for the low resourced language of Portuguese. The  performance of this model was evaluated in various Portuguese language benchmarks,  and it was compared with other baseline LLMs on the same benchmarks. The results  showed that the fine-tuned LLM produced satisfactory results compared to the other  baseline models that were compared.
 
 These works collectively highlight a promising direction: through careful fine-tuning strategies, LLMs can be made highly effective in low-resource linguistic contexts, even without massive-scale pretraining.
 
@@ -43,21 +39,17 @@ These works collectively highlight a promising direction: through careful fine-t
 
 ## Parameter-Efficient Fine-Tuning
 
-A major limitation of LLMs is their immense compute and memory demands. Chowdhery et al. (2022) noted that training large models involves managing billions of parameters along with gradients and optimizer states. For example, pretraining LLaMA 7B with a batch size of 1 requires approximately 58 GB of VRAM—well beyond the capacity of a typical high-end GPU like the RTX 4090 \[Zhao et al., 2024].
+The main challenge in the pre-training and fine-tuning of LLMs is the huge computational  power and memory requirements. The memory requirements include trainable parameters,  their gradients and optimizer states, which accounts to several billions of parameters,  according to Chowdhery et al. (2022). As stated by Zhao et al. (2024) a minimum of 58 GB of VRAM is required for  pre-training a Llama 7B model, when starting from scratch on a batch size = 1, which  comes from 14 GB of trainable parameters, 42 GB of Adam optimizer states and weight  gradients, and 2 GB of activations. With such high VRAM requirements, even on highend consumer-level GPUs like the NVIDIA RTX 4090, which can have up to 24GB of  VRAM on a single GPU, it makes the training process impossible.
 
-To address this, researchers have developed **Parameter-Efficient Fine-Tuning (PEFT)** methods. These techniques allow pre-trained models to be adapted to new tasks with only a small subset of their parameters being updated—making fine-tuning much more accessible \[Ding et al., 2022].
+Parameter-efficient fine-tuning (PEFT) techniques allow pre-trained language models to  be effectively adapted to a wide range of downstream tasks. This can be done without  the need to finetune all of the model’s parameters.
 
 ### LoRA: Low-Rank Adaptation
 
-One of the most widely adopted PEFT methods is **LoRA (Low-Rank Adaptation)** \[Hu et al., 2021]. During fine-tuning, LoRA inserts a pair of small low-rank matrices into each layer of the model. Only these matrices are trained, while the original model weights remain frozen.
-
-This approach drastically reduces memory and compute requirements, making it feasible to adapt large models without full-scale retraining.
+A parameter-efficient finetuning technique known as LoRA is extensively adopted for  the purpose of fine-tuning language learning models (LLMs). During the process of finetuning, it accomplishes its function by incorporating a pair of low-rank update matrices  into each layer of the pretrained LLM. The only matrices that are updated are the small  rank matrices, whereas the weights that were initially pretrained are not changed. The  number of trainable parameters and the amount of memory that is required is significantly  reduced when compared to full fine-tuning when using this approach.
 
 ### QLoRA: Quantized LoRA
 
-**QLoRA** takes LoRA a step further by applying quantization to the update matrices \[Dettmers et al., 2023]. The use of low-bit representations minimizes memory usage even further, making it possible to fine-tune models on resource-constrained devices like consumer-grade laptops or mobile phones.
-
-While significantly lighter than full fine-tuning, QLoRA still achieves performance comparable to LoRA. Its lightweight nature makes it especially suitable for deploying offensive language detection in real-world, low-resource scenarios—whether that’s a local NGO working in a specific dialect or a mobile app trying to filter harmful speech on-device.
+For further reduction of the memory footprint during fine-tuning, the QLoRA approach  is an extension of the LoRA technique. This technique quantizes the low-rank update  matrices to low-bit representations, therefore diminishing the memory footprint. The  ability to adapt large language models on resource-constrained devices such as mobile  phones is made possible by this. QLoRA is a promising strategy for effective transfer  learning to low-resource languages on edge devices since it retains competitive performance  to full LoRA while substantially decreasing the memory needs. This presents a significant  challenge for traditional LoRA.
 
 ---
 
@@ -67,7 +59,27 @@ From rule-based filters to massive generative LLMs, the evolution of offensive l
 
 The recent advances in low-resource adaptation and parameter-efficient fine-tuning are not just technical milestones—they’re steps toward inclusive, equitable language technology. They make it possible for communities speaking underrepresented languages to benefit from the same protections against harmful content that high-resource languages already enjoy.
 
-This concludes our four-part series on the history of offensive language detection. While the field will continue to evolve, one thing is clear: the fusion of LLMs with thoughtful fine-tuning and equitable design holds the key to safer, smarter digital communication.
+This concludes our four-part series on the history of offensive language detection.
+
+---
+
+## References
+
+[1] C. Toraman, "LlamaTurk: Adapting Open-Source Generative Large Language Models for Low-Resource Language," 2024.
+
+[2] T. T. Nguyen, C. Wilson, and J. Dalins, "Fine-Tuning Llama 2 Large Language Models for Detecting Online Sexual Predatory Chats and Abusive Texts," ArXiv, vol. abs/2308.14683, 2023.
+
+[3] G. L. Garcia, P. H. Paiola, L. H. Morelli, G. Candido, A. C. Júnior, D. S. Jodas, L. C. S. Afonso, I. R. Guilherme, B. E. Penteado, and J. P. Papa, "Introducing Bode: A Fine-Tuned Large Language Model for Portuguese Prompt-Based Task," ArXiv, vol. abs/2401.02909, 2024.
+
+[4] A. Chowdhery, S. Narang, J. Devlin, M. Bosma, G. Mishra, A. Roberts, P. Barham, H. W. Chung, C. Sutton, S. Gehrmann, et al., "Palm: Scaling language modeling with pathways," Journal of Machine Learning Research, 2023.
+
+[5] J. Zhao, Z. Zhang, B. Chen, Z. Wang, A. Anandkumar, and Y. Tian, "Galore: Memory-efficient llm training by gradient low-rank projection," 2024.
+
+[6] N. Ding, Y. Qin, G. Yang, F. Wei, Z. Yang, Y. Su, S. Hu, Y. Chen, C.-M. Chan, W. Chen, J. Yi, W. X. Zhao, X. Wang, Z. Liu, H.-T. Zheng, J. Chen, Y. Liu, J. Tang, J. Li, and M. Sun, "Delta tuning: A comprehensive study of parameter efficient methods for pre-trained language models," ArXiv preprint arXiv:2203.06904, 2022.
+
+[7] J. E. Hu, Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, and W. Chen, "LoRA: Low-Rank Adaptation of Large Language Models," ArXiv, vol. abs/2106.09685, 2021.
+
+[8] T. Dettmers, A. Pagnoni, A. Holtzman, and L. Zettlemoyer, "QLoRA: Efficient Finetuning of Quantized LLMs," Advances in Neural Information Processing Systems, vol. 36, May 2023. ISBN: 2305.14314v1 Publisher: Neural information processing systems foundation.
 
 ---
 
