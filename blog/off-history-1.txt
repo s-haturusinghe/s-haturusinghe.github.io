@@ -2,7 +2,7 @@
 title: "A Brief History of Offensive Language Detection - Part 1: Traditional Methods to Deep Learning"
 date: "2024-02-01"
 author: "Shanilka Haturusinghe"
-description: "This is the first part of a three-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages."
+description: "This is the first part of a four-part series where I'll be sharing my research journey through the brief history of offensive language detection. In this article, we'll explore the foundational concepts, the evolution from traditional approaches to modern deep learning methods, and the unique challenges posed by low-resource languages."
 tags: ["machine learning", "hate speech detection", "ai", "nlp"]
 ---
 
@@ -21,14 +21,12 @@ This is the first part of a three-part series where I'll be sharing my research 
 
 ## The Challenge of Offensive Content Detection
 
-![Placeholder for: A visual representation of social media posts with various types of content, highlighting the scale and diversity of user-generated content across different platforms]
-*Suggested image: An infographic showing the volume of daily social media posts with statistics about content moderation challenges*
 
-Text classification is a prominent research area in the field of natural language processing (NLP). It is the process of automatically classifying documents into one or more predefined classes based on their content or topics.
+Text classification is a prominent research area in the field of natural language processing  (NLP) . It is the process of automatically classifying documents into one or more  predefined classes based on their content or topics. 
 
-In recent years, the problem of offensive content detection has gained significant attention from researchers in the fields of Artificial Intelligence and NLP. This increased interest can be assigned to the emergence of social media and the large number of user-generated content and posts that can be found on these platforms, as well as in the comment sections of a variety of websites. The vast amount of content makes it impractical and inefficient to rely simply on inspection by humans for the purpose of finding offensive language content. As a result, it is necessary to develop automated solutions that are accurate.
+In recent years, the problem of offensive content detection has gained significant attention  from researchers in the fields of Artificial Intelligence and NLP. This increased interest  can be assigned to the emergence of social media and the large number of user-generated  content and posts that can be found on these platforms, as well as in the comment sections  of a variety of websites. The vast amount of content makes it impractical and inefficient to  rely simply on inspection by humans for the purpose of finding offensive language content.  As a result, it is necessary to develop automated solutions that are accurate.  
 
-Detecting offensive language, especially in social media posts is a task that falls under the domain of text classification. However, the implementation of an efficient model for the detection of offensive language is a challenging task. This is due to the fact that the definition of what constitutes offensive content can be subjective and is based on a number of different aspects. Even for humans, evaluating whether the given content is offensive or not can be difficult because it might depend on a variety of aspects such as gender, color, political affiliations, and other similar things. The challenge becomes more evident when we examine machine classifier-based moderators. It was shown that no particular pair of machine moderators demonstrated significant agreement in their ability to detect offensive language, with only a small number of pairings demonstrating a moderate level of agreement. As a consequence of this, the development of a robust and generalizable model that is capable of reliably detecting offensive content across a variety of situations continues to be an important topic of research.
+Detecting offensive language, especially in social media posts is a task that falls under the  domain of text classification. However, the implementation of an efficient model for  the detection of offensive language is a challenging task. This is due to the fact that the  definition of what constitutes offensive content can be subjective and is based on a number  of different aspects. Even for humans, evaluating whether the given content is offensive or  not can be difficult because it might depend on a variety of aspects such as gender, color,  political affiliations, and other similar things. The challenge becomes more evident when we examine machine classifier-based moderators. It was shown that no particular  pair of machine moderators demonstrated significant agreement in their ability to detect  offensive language, with only a small number of pairings demonstrating a moderate level  of agreement. As a consequence of this, the development of a robust and generalizable  model that is capable of reliably detecting offensive content across a variety of situations  continues to be an important topic of research.
 
 ## The Evolution: From Rule-Based to Deep Learning
 
@@ -81,6 +79,56 @@ Stay tuned for **Part 2: The Transformer Revolution and Modern Approaches**!
 
 ---
 
-*This article is part of my research on offensive language detection in NLP. If you found this interesting, feel free to share your thoughts in the comments below. You can also connect with me on [your social media links] for more updates on my research journey.*
+## References
+
+[1] M. Wang, "Research on Text Classification Method Based on NLP," *Advances in Computer, Signals and Systems*, 2023.
+
+[2] A. I. Kadhim, "Survey on supervised machine learning techniques for automatic text classification," *Artificial Intelligence Review*, vol. 52, pp. 273–292, June 2019.
+
+[3] M. Dadvar, D. Trieschnigg, R. Ordelman, and F. d. Jong, "Improving Cyberbullying Detection with User Context," pp. 693–696, 2013.
+
+[4] T. C. Weerasooriya, S. Luger, S. Poddar, A. KhudaBukhsh, and C. Homan, "Subjective Crowd Disagreements for Subjective Data: Uncovering Meaningful CrowdOpinion with Population-level Learning," in *Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)* (A. Rogers, J. Boyd-Graber, and N. Okazaki, eds.), pp. 950–966, Association for Computational Linguistics, July 2023.
+
+[5] N. D. Gitari, Z. Zuping, H. Damien, and J. Long, "A Lexicon-based Approach for Hate Speech Detection," *International Journal of Multimedia and Ubiquitous Engineering*, vol. 10, no. 4, pp. 215–230, 2015.
+
+[6] J. Malik, G. Pang, and A. v. d. Hengel, "Deep Learning for Hate Speech Detection: A Comparative Study," *ArXiv*, vol. abs/2202.09517, 2022.
+
+[7] E. H. Dyvik, "The most spoken languages worldwide 2023 | Statista," May 2024.
+
+[8] M. Zampieri, T. Ranasinghe, C. Mrinal, S. Gaikwad, P. Krishna, M. Nene, and P. Shrunali, "Predicting the Type and Target of Offensive Social Media Posts in Marathi," *Social Network Analysis and Mining*, vol. 12, no. 1, 2022.
+
+[9] M. Mozafari, R. Farahbakhsh, and N. Crespi, "Cross-Lingual Few-Shot Hate Speech and Offensive Language Detection Using Meta Learning," *IEEE Access*, vol. 10, pp. 14880–14896, 2022.
+
+[10] M. Zampieri, S. Malmasi, P. Nakov, S. Rosenthal, N. Farra, and R. Kumar, "SemEval-2019 Task 6: Identifying and Categorizing Offensive Language in Social Media (OffensEval)," 2019.
+
+[11] V. Balakrishnan, V. Govindan, and K. N. Govaichelvan, "Tamil Offensive Language Detection: Supervised Versus Unsupervised Learning Approaches," *ACM Transactions on Asian and Low-Resource Language Information Processing*, vol. 22, no. 4, pp. 1–14, 2023.
+
+[12] F. Shannag, B. Hammo, and H. Faris, "The Design, Construction and Evaluation of Annotated Arabic Cyberbullying Corpus," *Education and Information Technologies*, vol. 27, no. 8, pp. 10977–11023, 2022.
+
+[13] O. Oriola and E. Kotzé, "Evaluating Machine Learning Techniques for Detecting Offensive and Hate Speech in South African Tweets," *IEEE Access*, vol. 8, pp. 21496–21509, 2020.
+
+[14] Q. B. Baker, F. Shatnawi, S. Rawashdeh, M. Al-Smadi, and Y. Jararweh, "Detecting Epidemic Diseases Using Sentiment Analysis of Arabic Tweets," *JUCS - Journal of Universal Computer Science*, vol. 26, no. 1, pp. 50–70, 2020.
+
+[15] J. Risch, R. Ruff, and R. Krestel, "Explaining Offensive Language Detection," *Journal for Language Technology and Computational Linguistics*, vol. 34, no. 1, pp. 29–47, 2020.
+
+[16] P. Badjatiya, S. Gupta, M. Gupta, and V. Varma, "Deep Learning for Hate Speech Detection in Tweets," *Proceedings of the 26th International Conference on World Wide Web Companion*, 2017.
+
+[17] F. D. Vigna, A. Cimino, F. Dell'Orletta, M. Petrocchi, and M. Tesconi, "Hate me, hate me not: Hate speech detection on Facebook," May 2017.
+
+[18] B. Gambäck and U. K. Sikdar, "Using Convolutional Neural Networks to Classify Hate-Speech," in *Proceedings of the First Workshop on Abusive Language Online*, pp. 85–90, Association for Computational Linguistics, 2017.
+
+[19] F. L. S. D. Almeida and G. Xexéo, "Word Embeddings: A Survey," 2019.
+
+[20] K. Boonchuay, "Sentiment Classification Using Text Embedding for Thai Teaching Evaluation," *Applied Mechanics and Materials*, vol. 886, pp. 221–226, 2019.
+
+[21] J. Pennington, R. Socher, and C. Manning, "Glove: Global Vectors for Word Representation," 2014.
+
+[22] T. Mikolov, K. Chen, G. Corrado, and J. Dean, "Efficient estimation of word representations in vector space," 2013.
+
+[23] P. Bojanowski, É. Grave, A. Joulin, and T. Mikolov, "Enriching Word Vectors With Subword Information," *Transactions of the Association for Computational Linguistics*, vol. 5, pp. 135–146, 2017.
+
+[24] S. Kamble, K. J. Somaiya, and A. Joshi, "Hate Speech Detection from Code-mixed Hindi-English Tweets Using Deep Learning Models," Nov. 2018.
+
+---
 
 **Tags:** #NLP #MachineLearning #DeepLearning #TextClassification #AI #Research
