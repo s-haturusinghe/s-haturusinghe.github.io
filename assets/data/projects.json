@@ -20,7 +20,7 @@
   },
   "subasaPLM": {
     "title": "Subasa - Pretrained Language Models (PLM) Framework",
-    "category": "Natural Language Processing",
+    "category": "Natural Language Processing, LLMs",
     "tech": "Python, PyTorch, HuggingFace, Transformers, XLM-RoBERTa",
     "image": "../assets/images/project2.png",
     "shortDescription": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
@@ -34,5 +34,28 @@
       "LIME-based model explanations"
     ],
     "github": "https://github.com/haturusinghe/subasa-plm"
+  },
+  "personacraftAI": {
+    "title": "PersonaCraft.AI",
+    "category": "Natural Language Processing, Machine Learning, LLMOps",
+    "tech": "Python, FastAPI, ZenML, LangChain, MongoDB, Qdrant, OpenAI GPT-4, Llama 3.1, TRL, Unsloth, AWS SageMaker, Docker",
+    "image": "../assets/images/project3.jpg",
+    "shortDescription": "A comprehensive ML platform that transforms digital content into high-quality instruction and preference datasets for AI model training.",
+    "description": "PersonaCraft.AI is a comprehensive machine learning platform that crawls, processes, and transforms digital content from various sources into high-quality instruction and preference datasets for training AI models. The system creates personalized AI training data by analyzing an individual's digital footprint across multiple platforms, featuring a modular pipeline-based architecture with MLOps integration.",
+    "features": [
+      "Multi-platform data crawling (LinkedIn, Medium, GitHub, web articles)",
+      "Intelligent data processing with text cleaning and embedding generation",
+      "Instruction-following and preference dataset generation using GPT models",
+      "Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO)",
+      "ZenML-based MLOps pipeline for reproducible workflows",
+      "Qdrant vector database integration for similarity search",
+      "MongoDB data warehouse for structured storage",
+      "AWS SageMaker integration for scalable cloud training",
+      "Automated Hugging Face Hub publishing",
+      "Selenium-based web scraping with BeautifulSoup4",
+      "Docker containerization and Poetry package management",
+      "Comet ML and Opik monitoring integration"
+    ],
+    "github": "https://github.com/haturusinghe/persona-craft-ai"
   }
 }
