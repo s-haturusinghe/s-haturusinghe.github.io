@@ -93,7 +93,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Populate modal content
     document.getElementById("modal-title").textContent = project.title;
     document.getElementById("modal-category").textContent = project.category;
-    document.getElementById("modal-tech").textContent = project.tech;
+    
+    // Format tech stack as a styled list
+    const techElement = document.getElementById("modal-tech");
+    const techItems = project.tech.split(",").map(tech => tech.trim());
+    techElement.innerHTML = techItems.map(tech => `<span class="tech-tag">${tech}</span>`).join("");
+    
     document.getElementById("modal-description").textContent = project.description;
     
     // Populate features list
