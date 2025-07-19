@@ -1,8 +1,8 @@
 {
   "subasaLLM": {
     "title": "Subasa LLM Framework",
-    "category": "Natural Language Processing",
-    "tech": "PyTorch, HuggingFace, Transformers, TRL, Unsloth, Scikit-learn, LoRA",
+    "category": "Natural Language Processing, Large Language Models, Machine Learning",
+    "tech": "PyTorch, HuggingFace, Transformers, TRL, Unsloth, Scikit-learn, LoRA, Llama, Mistral, Weights & Biases",
     "image": "../assets/images/project1.png",
     "shortDescription": "A task-specific fine-tuning framework for LLMs focused on offensive language detection.",
     "description": "This project provides a specialized fine-tuning pipeline for large language models (including Llama and Mistral variants) using LoRA (Low-Rank Adaptation) to optimize model performance on offensive language detection tasks across multilingual contexts. It features comprehensive support for the Sinhala language, integrating seamlessly with the SOLD (Sinhala Offensive Language Detection) benchmark for evaluation.",
@@ -20,8 +20,8 @@
   },
   "subasaPLM": {
     "title": "Subasa - Pretrained Language Models (PLM) Framework",
-    "category": "Natural Language Processing, LLMs",
-    "tech": "Python, PyTorch, HuggingFace, Transformers, XLM-RoBERTa",
+    "category": "Natural Language Processing, Pretrained Language Models, Explainable AI",
+    "tech": "Python, PyTorch, HuggingFace, Transformers, XLM-RoBERTa, LIME, Weights & Biases",
     "image": "../assets/images/project2.png",
     "shortDescription": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
     "description": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
@@ -37,8 +37,8 @@
   },
   "personacraftAI": {
     "title": "PersonaCraft.AI",
-    "category": "Natural Language Processing, Machine Learning, LLMOps",
-    "tech": "Python, FastAPI, ZenML, LangChain, MongoDB, Qdrant, OpenAI GPT-4, Llama 3.1, TRL, Unsloth, AWS SageMaker, Docker",
+    "category": "Natural Language Processing, Machine Learning, MLOps, Data Engineering",
+    "tech": "Python, FastAPI, ZenML, LangChain, MongoDB, Qdrant, OpenAI GPT-4, Llama 3.1, TRL, Unsloth, AWS SageMaker, Docker, Selenium, BeautifulSoup4, Poetry, Comet ML, Opik",
     "image": "../assets/images/project3.jpg",
     "shortDescription": "A comprehensive ML platform that transforms digital content into high-quality instruction and preference datasets for AI model training.",
     "description": "PersonaCraft.AI is a comprehensive machine learning platform that crawls, processes, and transforms digital content from various sources into high-quality instruction and preference datasets for training AI models. The system creates personalized AI training data by analyzing an individual's digital footprint across multiple platforms, featuring a modular pipeline-based architecture with MLOps integration.",
@@ -60,8 +60,8 @@
   },
   "realtimeFashionRecommender": {
     "title": "Realtime Fashion Recommender",
-    "category": "Machine Learning, Recommendation Systems, MLOps",
-    "tech": "TensorFlow, CatBoost, Hopsworks, Streamlit, Python, Keras, MLOps",
+    "category": "Machine Learning, Recommendation Systems, MLOps, Deep Learning",
+    "tech": "TensorFlow, TensorFlow Recommenders, CatBoost, Hopsworks, Streamlit, Python, Keras, MLOps, Feature Store",
     "image": "../assets/images/project4.jpg",
     "shortDescription": "A machine learning-powered fashion recommendation system with real-time inference, interactive customer experiences, and a platform for customized writing content generation.",
     "description": "A machine learning-powered fashion recommendation system built with TensorFlow Recommenders and Hopsworks, featuring real-time inference and interactive customer experiences. Additionally, the system trains models using SFT and DPO techniques with the data to build a platform for customized writing content generation, empowering you to give your own voice.",
