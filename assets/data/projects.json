@@ -22,7 +22,7 @@
     "title": "Subasa - Pretrained Language Models (PLM) Framework",
     "category": "Natural Language Processing",
     "tech": "Python, PyTorch, HuggingFace, Transformers, XLM-RoBERTa",
-    "image": "../assets/images/project1.png",
+    "image": "../assets/images/project2.png",
     "shortDescription": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
     "description": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
     "features": [
