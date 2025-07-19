@@ -1,0 +1,39 @@
+{
+  "project1": {
+    "title": "Sentiment Analysis System",
+    "category": "Natural Language Processing",
+    "tech": "Python, TensorFlow, BERT, Flask",
+    "image": "../assets/images/project1.png",
+    "shortDescription": "Advanced sentiment analysis using transformer models for social media text classification.",
+    "description": "This advanced sentiment analysis system leverages state-of-the-art transformer models to classify emotions and sentiments in social media text. The system processes real-time data streams and provides detailed emotional insights with high accuracy.\n\nThe project implements a complete pipeline from data preprocessing to model deployment, featuring custom BERT fine-tuning for domain-specific sentiment classification. The system supports multiple languages and can handle various text formats including tweets, reviews, and comments.",
+    "features": [
+      "Real-time sentiment classification with 95%+ accuracy",
+      "Multi-language support (English, Spanish, French)",
+      "Custom BERT model fine-tuned on social media data",
+      "RESTful API for easy integration",
+      "Interactive web dashboard for visualization",
+      "Batch processing capabilities for large datasets"
+    ],
+    "github": "https://github.com/haturusinghe/sentiment-analysis",
+    "demo": "https://sentiment-demo.shanilka.me"
+  },
+  "project2": {
+    "title": "Automated ML Pipeline",
+    "category": "Machine Learning",
+    "tech": "Python, Scikit-learn, MLflow, Docker",
+    "image": "../assets/images/project2.png",
+    "shortDescription": "End-to-end machine learning pipeline with automated feature engineering and model selection.",
+    "description": "An end-to-end automated machine learning pipeline that streamlines the entire ML workflow from data ingestion to model deployment. The system features intelligent feature engineering, automated hyperparameter tuning, and model selection algorithms.\n\nThis pipeline significantly reduces the time required for ML model development while maintaining high performance standards. It includes comprehensive logging, monitoring, and version control for reproducible experiments.",
+    "features": [
+      "Automated feature engineering and selection",
+      "Hyperparameter optimization with Bayesian methods",
+      "Model comparison and selection framework",
+      "Automated data quality checks and preprocessing",
+      "MLflow integration for experiment tracking",
+      "Containerized deployment with Docker",
+      "CI/CD pipeline for model updates"
+    ],
+    "github": "https://github.com/haturusinghe/automl-pipeline",
+    "demo": "https://automl-demo.shanilka.me"
+  }
+}
