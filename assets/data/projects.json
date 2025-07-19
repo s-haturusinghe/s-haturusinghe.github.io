@@ -57,5 +57,26 @@
       "Comet ML and Opik monitoring integration"
     ],
     "github": "https://github.com/haturusinghe/persona-craft-ai"
+  },
+  "realtimeFashionRecommender": {
+    "title": "Realtime Fashion Recommender",
+    "category": "Machine Learning, Recommendation Systems, MLOps",
+    "tech": "TensorFlow, CatBoost, Hopsworks, Streamlit, Python, Keras, MLOps",
+    "image": "../assets/images/project4.jpg",
+    "shortDescription": "A machine learning-powered fashion recommendation system with real-time inference and interactive customer experiences.",
+    "description": "A machine learning-powered fashion recommendation system built with TensorFlow Recommenders and Hopsworks, featuring real-time inference and interactive customer experiences. This project implements a two-tower retrieval model combined with a ranking model to provide personalized fashion recommendations based on H&M customer data.",
+    "features": [
+      "Real-time personalized fashion item recommendations with real-time inference",
+      "Two-tower architecture with customer and item embedding towers for efficient candidate retrieval",
+      "CatBoost ranking model for ranking and reordering recommended items",
+      "Interactive Streamlit-based web interface for customer interaction and feedback",
+      "Complete MLOps pipeline with feature engineering, training, and deployment using Hopsworks",
+      "Real-time feature store to track customer interactions and update recommendations dynamically",
+      "Customer tower encoding customer features (age, membership status, interaction history)",
+      "Item tower encoding article features (garment type, color, department, embeddings)",
+      "TensorFlow/Keras architecture with embedding layers and feed-forward networks",
+      "Customer demographics, item attributes, and interaction patterns analysis"
+    ],
+    "github": "https://github.com/haturusinghe/realtime-fashion-recommender"
   }
 }
