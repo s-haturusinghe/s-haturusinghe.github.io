@@ -171,12 +171,101 @@
           <h2 class="h2 article-title">Projects</h2>
         </header>
 
-        <section class="under-maintenance">
-          <h2>🚧 Under Maintenance!</h2>
-          <p>Currently working on updating the project list with the latest work. Please check back soon!</p>
+        <section class="projects-content">
+          
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-filter-btn>All</button>
+              </li>
+              <li class="select-item">
+                <button data-filter-btn>Machine Learning</button>
+              </li>
+              <li class="select-item">
+                <button data-filter-btn>Natural Language Processing</button>
+              </li>
+              <li class="select-item">
+                <button data-filter-btn>Web Development</button>
+              </li>
+              <li class="select-item">
+                <button data-filter-btn>Data Science</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Machine Learning</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Natural Language Processing</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web Development</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Data Science</button>
+            </li>
+          </ul>
+
+          <section class="projects-grid">
+            <ul class="project-list" id="project-list">
+              <!-- Projects will be dynamically loaded here -->
+            </ul>
+          </section>
+
         </section>
 
       </article>
+
+      <!-- Project Detail Modal -->
+      <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 id="modal-title">Project Title</h2>
+            <button class="modal-close" id="modal-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="project-details">
+              <div class="project-meta">
+                <span class="project-category-tag" id="modal-category">Category</span>
+                <span class="project-tech" id="modal-tech">Technologies</span>
+              </div>
+              <div class="project-description-full" id="modal-description">
+                Project description will be loaded here...
+              </div>
+              <div class="project-features" id="modal-features">
+                <h3>Key Features</h3>
+                <ul id="modal-features-list">
+                  <!-- Features will be dynamically loaded -->
+                </ul>
+              </div>
+              <div class="project-links">
+                <a href="#" id="modal-github-link" class="btn-link" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i>
+                  View on GitHub
+                </a>
+                <a href="#" id="modal-demo-link" class="btn-link" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
 
