@@ -78,5 +78,33 @@
       "Customer demographics, item attributes, and interaction patterns analysis"
     ],
     "github": "https://github.com/haturusinghe/realtime-fashion-recommender"
+  },
+  "ageGenderDetectionApp": {
+    "title": "TensorFlow Lite Age and Gender Detection Android App",
+    "category": "Machine Learning, Mobile Development, Computer Vision, Deep Learning",
+    "tech": "Kotlin, TensorFlow Lite, Android, CNN, GPU Acceleration, NNAPI",
+    "image": "../assets/images/project5.jpg",
+    "shortDescription": "An Android application that uses TensorFlow Lite models to detect age and gender from images using the device camera or gallery images.",
+    "description": "A mobile Android application that leverages TensorFlow Lite models for real-time age and gender detection from images captured through the device camera or selected from the gallery. The app features multiple acceleration options including CPU inference, GPU acceleration, and NNAPI support for compatible devices, providing efficient on-device machine learning capabilities.",
+    "features": [
+      "Real-time age and gender detection from camera captures",
+      "Gallery image selection for batch processing",
+      "Multiple hardware acceleration options (CPU, GPU, NNAPI)",
+      "Real-time inference time reporting and performance metrics",
+      "User-friendly interface with intuitive controls",
+      "Camera capture and gallery selection buttons",
+      "Model initialization controls for different acceleration modes",
+      "Hardware acceleration toggles for optimal performance",
+      "Age estimation using regression (continuous value prediction)",
+      "Binary gender classification (Male/Female)",
+      "Separable convolutions CNN architecture for age prediction",
+      "Batch normalization and LeakyReLU activation functions",
+      "Dropout regularization for improved generalization",
+      "UTKFace dataset training with data augmentation",
+      "Adam optimizer with learning rate scheduling",
+      "Early stopping and model checkpointing",
+      "TensorBoard integration for training monitoring"
+    ],
+    "github": "https://github.com/haturusinghe/cnn-age-gender-detection-android"
   }
 }
