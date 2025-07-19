@@ -106,5 +106,36 @@
       "TensorBoard integration for training monitoring"
     ],
     "github": "https://github.com/haturusinghe/cnn-age-gender-detection-android"
+  },
+  "animeAgents": {
+    "title": "AnimeAgents - AI Anime Character Simulation Engine",
+    "category": "AI Agents, Natural Language Processing, LLMOps, Game Development",
+    "tech": "Python, LangGraph, LangChain, FastAPI, MongoDB, Groq, Opik, WebSockets, Docker, RAG, Vector Databases, uv, ruff",
+    "image": "../assets/images/project6.jpg",
+    "shortDescription": "A production-ready AI agent simulation engine that transforms static NPCs into dynamic AI personalities impersonating iconic anime protagonists.",
+    "description": "AnimeAgents is a sophisticated AI agent simulation engine that creates dynamic, intelligent game characters powered by LLMs and RAG systems. The system impersonates iconic anime protagonists like Naruto, Goku, and Edward Elric, featuring production-ready agentic architectures with advanced memory systems, real-time communication, and comprehensive monitoring capabilities.",
+    "features": [
+      "Dynamic AI anime character impersonation (Naruto, Goku, Edward Elric, Light Yagami)",
+      "LangGraph-based intelligent agent development and orchestration",
+      "Production-grade RAG systems with vector database integration",
+      "Knowledge base creation from anime wikis and character databases",
+      "Advanced information retrieval and agentic communication patterns",
+      "RESTful API deployment with FastAPI and Docker containerization",
+      "Real-time communication via WebSockets for dynamic interactions",
+      "Short and long-term memory systems with MongoDB integration",
+      "Dynamic conversation handling and real-time response generation",
+      "End-to-end system architecture (UI → Backend → Agent → Monitoring)",
+      "Integration with Groq for high-speed LLM inference",
+      "Opik integration for agent monitoring and evaluation",
+      "Automated agent evaluation and prompt monitoring",
+      "Prompt versioning and evaluation dataset generation",
+      "Modern Python tooling with uv and ruff for development",
+      "LLMOps best practices implementation",
+      "Character-specific prompt engineering and personality modeling",
+      "Advanced agent memory and context management",
+      "Anime-specific dialogue patterns and personality traits",
+      "Character backstory and world-building integration"
+    ],
+    "github": "https://github.com/haturusinghe/anime-agents"
   }
 }
