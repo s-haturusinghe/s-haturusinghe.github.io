@@ -1,39 +1,38 @@
 {
-  "project1": {
-    "title": "Sentiment Analysis System",
+  "subasaLLM": {
+    "title": "Subasa LLM Framework",
     "category": "Natural Language Processing",
-    "tech": "Python, TensorFlow, BERT, Flask",
+    "tech": "PyTorch, HuggingFace, Transformers, TRL, Unsloth, Scikit-learn, LoRA",
     "image": "../assets/images/project1.png",
-    "shortDescription": "Advanced sentiment analysis using transformer models for social media text classification.",
-    "description": "This advanced sentiment analysis system leverages state-of-the-art transformer models to classify emotions and sentiments in social media text. The system processes real-time data streams and provides detailed emotional insights with high accuracy.\n\nThe project implements a complete pipeline from data preprocessing to model deployment, featuring custom BERT fine-tuning for domain-specific sentiment classification. The system supports multiple languages and can handle various text formats including tweets, reviews, and comments.",
+    "shortDescription": "A task-specific fine-tuning framework for LLMs focused on offensive language detection.",
+    "description": "This project provides a specialized fine-tuning pipeline for large language models (including Llama and Mistral variants) using LoRA (Low-Rank Adaptation) to optimize model performance on offensive language detection tasks across multilingual contexts. It features comprehensive support for the Sinhala language, integrating seamlessly with the SOLD (Sinhala Offensive Language Detection) benchmark for evaluation.",
     "features": [
-      "Real-time sentiment classification with 95%+ accuracy",
-      "Multi-language support (English, Spanish, French)",
-      "Custom BERT model fine-tuned on social media data",
-      "RESTful API for easy integration",
-      "Interactive web dashboard for visualization",
-      "Batch processing capabilities for large datasets"
+      "Sinhala offensive language detection",
+      "Support for multiple LLM architectures (Llama, Mistral)",
+      "LoRA-based fine-tuning for efficient training",
+      "Offensive phrase extraction and analysis",
+      "Integration with Weights & Biases for experiment tracking",
+      "Support for both standard and augmented datasets",
+      "Comprehensive evaluation metrics and reporting",
+      "Advanced data augmentation strategies"
     ],
-    "github": "https://github.com/haturusinghe/sentiment-analysis",
-    "demo": "https://sentiment-demo.shanilka.me"
+    "github": "https://github.com/haturusinghe/subasa-llm"
   },
-  "project2": {
-    "title": "Automated ML Pipeline",
-    "category": "Machine Learning",
-    "tech": "Python, Scikit-learn, MLflow, Docker",
-    "image": "../assets/images/project2.png",
-    "shortDescription": "End-to-end machine learning pipeline with automated feature engineering and model selection.",
-    "description": "An end-to-end automated machine learning pipeline that streamlines the entire ML workflow from data ingestion to model deployment. The system features intelligent feature engineering, automated hyperparameter tuning, and model selection algorithms.\n\nThis pipeline significantly reduces the time required for ML model development while maintaining high performance standards. It includes comprehensive logging, monitoring, and version control for reproducible experiments.",
+  "subasaPLM": {
+    "title": "Subasa - Pretrained Language Models (PLM) Framework",
+    "category": "Natural Language Processing",
+    "tech": "Python, PyTorch, HuggingFace, Transformers, XLM-RoBERTa",
+    "image": "../assets/images/project1.png",
+    "shortDescription": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
+    "description": "A framework for adapting Pretrained Language Models for Low-Resourced Offensive Language Detection in Sinhala using pretrained models and intermediate tasks.",
     "features": [
-      "Automated feature engineering and selection",
-      "Hyperparameter optimization with Bayesian methods",
-      "Model comparison and selection framework",
-      "Automated data quality checks and preprocessing",
-      "MLflow integration for experiment tracking",
-      "Containerized deployment with Docker",
-      "CI/CD pipeline for model updates"
+      "Two-stage finetuning approach with intermediate tasks",
+      "Support for multiple pretrained models (XLM-RoBERTa base/large)",
+      "Intermediate tasks: Masked Rationale Prediction (MRP) and Rationale Prediction (RP)",
+      "Comprehensive evaluation metrics including AUROC and explainability measures",
+      "Integration with Weights & Biases for experiment tracking",
+      "LIME-based model explanations"
     ],
-    "github": "https://github.com/haturusinghe/automl-pipeline",
-    "demo": "https://automl-demo.shanilka.me"
+    "github": "https://github.com/haturusinghe/subasa-plm"
   }
 }

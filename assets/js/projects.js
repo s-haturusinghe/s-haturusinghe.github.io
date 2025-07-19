@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
           title: "Project Data Unavailable",
           category: "Error",
           tech: "N/A",
-          image: "../assets/images/my-avatar.png",
+          image: "../assets/images/place.webp",
           shortDescription: "Unable to load project data. Please try again later.",
           description: "Unable to load project data. Please try again later.",
           features: ["Project data loading failed"],
@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Update links
     document.getElementById("modal-github-link").href = project.github;
-    document.getElementById("modal-demo-link").href = project.demo;
     
     // Show modal
     modal.classList.add("active");
