@@ -7,7 +7,7 @@
   
   // Check if we've already logged this page in this session
   if (sessionStorage.getItem(sessionKey)) {
-    return; // Exit early if already logged
+    // return; // Exit early if already logged
   }
   
   const params = new URLSearchParams({
