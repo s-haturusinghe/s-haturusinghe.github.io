@@ -30,7 +30,7 @@
     ColorDepth: screen.colorDepth
   });
 
-  fetch('https://script.google.com/macros/s/AKfycbwF5qttKqRmLRph5rY2gc_dGvOjzaFSsOG9_QYVr10du6FpryVpfqOnc4A-2cT0GC4g/exec?' + params.toString(), {
+  fetch('https://script.google.com/macros/s/AKfycby1IdeGYxfrYjgRRHbM726UqZik1GJ2d8xGtXekaEUAJ2MsX_VW1ZQ52kAP-hoCSO-h/exec?' + params.toString(), {
     mode: 'no-cors'
   }).then(() => {
     // Mark this page as logged for this session
