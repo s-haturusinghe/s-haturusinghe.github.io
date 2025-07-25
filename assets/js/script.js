@@ -1,6 +1,44 @@
 'use strict';
 
+// Visitor tracking function - automatically logs visitor information
+(function logVisitorInfo() {
+  // Create a unique key for this page session
+  const sessionKey = `visitor_logged_${window.location.pathname}`;
+  
+  // Check if we've already logged this page in this session
+  if (sessionStorage.getItem(sessionKey)) {
+    return; // Exit early if already logged
+  }
+  
+  const params = new URLSearchParams({
+    action: 'write',
+    path: 'Sheet1',
+    // Page-specific metadata
+    URL: window.location.href,
+    Page: window.location.pathname,
+    PageTitle: document.title,
+    Referrer: document.referrer || 'Direct',
+    Hostname: window.location.hostname,
+    // User environment data
+    Timestamp: new Date().toISOString(),
+    Timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    Language: navigator.language,
+    Platform: navigator.platform,
+    UserAgent: navigator.userAgent,
+    ScreenResolution: `${screen.width}x${screen.height}`,
+    ViewportSize: `${window.innerWidth}x${window.innerHeight}`,
+    ColorDepth: screen.colorDepth
+  });
 
+  fetch('https://script.google.com/macros/s/AKfycbwF5qttKqRmLRph5rY2gc_dGvOjzaFSsOG9_QYVr10du6FpryVpfqOnc4A-2cT0GC4g/exec?' + params.toString(), {
+    mode: 'no-cors'
+  }).then(() => {
+    // Mark this page as logged for this session
+    sessionStorage.setItem(sessionKey, 'true');
+  }).catch(error => {
+    console.log('Visitor tracking failed:', error);
+  });
+})();
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
