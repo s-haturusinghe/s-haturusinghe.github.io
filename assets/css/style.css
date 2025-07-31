@@ -153,6 +153,9 @@
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
+.jvectormap-container{
+  display: none;
+}
 
 *, *::before, *::after {
   margin: 0;
@@ -2539,7 +2542,7 @@ body.light-theme .publications-list .links a {
 
   .clients-item { min-width: calc(33.33% - 35px); }
 
-
+  
 
   /**
    * #RESUME
