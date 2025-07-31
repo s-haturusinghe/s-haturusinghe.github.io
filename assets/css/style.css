@@ -153,8 +153,8 @@
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
-.jvectormap-container{
-  display: none;
+a#mapmyvisitors-widget, #mapmyvisitors-widget {
+  display: none !important;
 }
 
 *, *::before, *::after {
