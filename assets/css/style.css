@@ -106,7 +106,7 @@
   --ff-poppins: 'Poppins', sans-serif;
 
   /* font-size */
-  --fs-1: 24px;
+  --fs-1: 20px;
   --fs-2: 18px;
   --fs-3: 17px;
   --fs-4: 16px;
@@ -2512,7 +2512,7 @@ body.light-theme .publications-list .links a {
      * typography
      */
 
-    --fs-1: 24px;
+    --fs-1: 20px;
     --fs-2: 24px;
     --fs-3: 26px;
     --fs-4: 18px;
