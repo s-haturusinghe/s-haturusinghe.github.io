@@ -1,0 +1,26 @@
+{
+  "article1": {
+    "title": "Kelaniya University student makes history with AI research publication",
+    "description": "Shanilka Haturusinghe, a computer science undergraduate at the Kelaniya University, has achieved a groundbreaking milestone ...",
+    "thumbnail": "../assets/images/article3.png",
+    "url": "https://www.dailynews.lk/2025/05/30/local/787944/kelaniya-university-student-makes-history-with-ai-research-publication/",
+    "source": "DAILYNEWS.LK",
+    "date": "2025-05-30"
+  },
+  "article2": {
+    "title": "A Journey of Innovation and Cultural Exploration, Students from Sri Lanka Discover Huawei Headquarters in China",
+    "description": "The importance of cutting-edge technology and cultural understanding cannot be overstated in an increasingly interconnected world. Recognizing this, and with the goal of providing the opportunity to learn cutting-edge ICT technologies, Huawei’s Seeds for the Future Program 2023 selected a group of four undergraduates from Sri Lanka, who were chosen by the Ministry of Education...",
+    "thumbnail": "../assets/images/article2.png",
+    "url": "https://bizenglish.adaderana.lk/a-journey-of-innovation-and-cultural-exploration-students-from-sri-lanka-discover-huawei-headquarters-in-china/",
+    "source": "Ada Derana",
+    "date": "2023-11-08"
+  },
+  "article3": {
+    "title": "Huawei kicks off Seeds for the Future 2023 for global university students",
+    "description": "The eighth ‘Seeds for the Future’ programme began in Sri Lanka on September 13, 2023, with four outstanding students from three state universities in Sri Lanka participating this year...",
+    "thumbnail": "../assets/images/article1.jpg",
+    "url": "https://www.dailymirror.lk/print/business/Huawei-kicks-off-Seeds-for-the-Future-2023-for-global-university-students/215-267585",
+    "source": "DAILYMIRROR.LK",
+    "date": "2023-09-30"
+  }
+}
