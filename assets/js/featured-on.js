@@ -1,4 +1,4 @@
-// Featured On Page Functionality
+// On the News Page Functionality
 document.addEventListener("DOMContentLoaded", function() {
   let featuredData = {};
 
