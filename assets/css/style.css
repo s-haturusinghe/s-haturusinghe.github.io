@@ -696,6 +696,59 @@ contact-info address { font-style: normal; }
   font-size: 20px;
 }
 
+/* News & Updates Section */
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.news-item {
+  border-left: 4px solid var(--orange-yellow-crayola);
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.news-date {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-7);
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+body.light-theme .news-date {
+  color: var(--dark-orange-yellow-crayola);
+}
+
+.news-content p {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+body.light-theme .news-content p {
+  color: var(--light-text-color);
+}
+
+.news-content a {
+  color: var(--orange-yellow-crayola);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.news-content a:hover {
+  text-decoration: underline;
+}
+
+body.light-theme .news-content a {
+  color: var(--dark-orange-yellow-crayola);
+}
+
 
 social-item .social-link:hover { color: var(--light-gray); }
 
